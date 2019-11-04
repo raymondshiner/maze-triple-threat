@@ -1,0 +1,112 @@
+\documentclass{article}
+\usepackage{csquotes}
+\usepackage[margin=1in]{geometry}
+
+\title{\huge Coding Standards for Triple Threat}
+\date{2019-9-27}
+\author{
+  Shiner, Raymond\\
+  \texttt{raymondshiner@gmail.coml}
+  \and
+  Hoxie, Daylyn\\
+  \texttt{dhoxie@eagles.ewu.edu}
+  \and 
+  Curley , Spencer\\
+   \texttt{scurley2@eagles.ewu.edu}
+}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+\tableofcontents
+\newpage
+\section{Intro and Purpose} 
+Because Tom told us to
+
+\noindent Otherwise - to unify the way in which TripleThreat writes software as a team. This document, although it may be changed, serves to function as the set of guidelines under which each member of TripleThreat will work on projects that represent the team. We will all try our best to adhere to these guidelines, to better function as a unit and to write better software.
+
+\section{Naming Conventions}
+\subsection{Interfaces}
+Interfaces will be named in camel case always beginning with a lower case I and then the intended use of the interface. For example, a CarComparator interface would be named “iCarComparator”
+\subsection{For Loop Variables}
+in the case of for loops, counting variables shall be denoted as i (and then j and k for any nested loops). In appropriate situations where more complicated logic or iteration occurs, author may utilize more meaningful variable names such as cur, row, etc.  \newline  Example \newline 
+(for(int i = 0; i $<$ someNumber; i++))
+
+\subsection{Variable Names} 
+Variables should named with meaningful names. To make the code easier for others to read.
+\subsection{Casing Styles}
+Camel Case will be use in almost all situations, as is according to recommended casing by the Java coding standards. (need to cite here ). (Method Signatures, varibles, etc.) \newline 
+\subsection{class conventions}
+Pascale case will be used for Class names
+\section{Commenting Conventions}
+\subsection{Files}
+At the top of each source file, a comment will list the name of the file, author, any revision authors, and a brief class description 
+\subsection{Methods}
+If a constructor, method, or field’s purpose would not be clear without an explanation, a brief comment should be included providing a description
+\newline
+At authors discretion, One line comments may be placed above any line or block of code that the author deems unclear to help clear confusion. (An example may be a manual insertion into a 2D array in which the context is not immediately clear based on the variable and method Names).
+
+\section{Spacing Conventions} 
+
+\subsection{Indentations}
+Indenting code is critical to make the code human readable. 
+\newline 
+\newline
+For all indenting purposes a tab of size 4 will be used.
+\newline 
+\newline
+Code blocks will be indented as such, with the open brace on the same line as the start of the block, and the code inside the block beginning one line down and one tab indented. All code within this block will begin indendted one tab past code block declaration. (Example) The end brace for the code block will be placed on its own line at the end of the block, at the same tab indentation as the original block declaration. EXAMPLE
+\newline 
+while(a \textless \space 10)\{ \newline
+	\hspace*{1cm}a++;\newline
+	\hspace*{1cm}a++; \newline
+\}
+\subsection{Variable Declarations}
+variable type and name, name and assignment operator, operator and assignment value, will all be separated by a single space. (Example – \enquote{int a = 1;})
+\subsection{Method Calls}
+method names will not be separated from opening parentheses. Inside parentheses will be each variable, if any, separated by a comma and a single space with no spaces on either end. Example (\enquote{methodCall(var1, var2);})
+\subsection{Operators}
+all operands and operators will be separated by a single space, with the exception of unary operators (i++, I--);
+\subsection{Loops}
+spacing in all kinds of loops will be the same as method calls, with the loop declaration and any semi colons replacing the method name and commas in this situation. As for operations within any loop declaration, standard operation/operand spacing applies (one space between them). 
+\newline (Example - \enquote{for(int cur = 0; cur $<$ something; cur++) -------- while(a $<$ 10)}
+
+\subsection{Semi-Colons}
+Whenever a semi colon is used to end a statement, it will go right after the last character in the given statement, no whitespace between them. After the end of the statement, a new line will always be used. \newline  EXAMPLE – int I = 0;
+
+\section{Testing Conventions}
+\subsection{Classes}
+Each production project located at src/projectName/projectName.csproj will have a corresponding unit test project located at test/projectName.Tests/projectName.Tests.csproj. In this example the C$\#$ Solution that links all relevant projects in the application both testing and not is located on the same package level as the src and test directories. Inside of each projects corresponding unit test project will be the same number of C$\#$ classes as the production project, with each one being named identical followed by the word “tests” and example of such a structure is below \newline 
+\subsection{Methods}
+Unit Test Methods shall use the following system to be named, \enquote{TheMethodThatIsBeingTested\_TheConditionsOfTheTest\_ExpectedResultOfTest()}.The purpose of this naming convention is to provide users of the unit test with as much information as possible so that when they are running/testing their code, they know exactly what each test is accomplishing without having to look at the source code for the tests. Example – A unit test that tests CarCompator’s compare method may be named as such. (in the file CarComparatorTests) \enquote{Compare\_TwoIdenticalCars\_Returns0} The Unit test of course would do just this, pass two identical cars into the comparator compare Method and verify that they in fact return the expected result.
+\newline 
+\newline
+
+EXCEPTION - When applicable to use data rows for reutilization of test logic with different test cases, the naming convention will be changed to TheMethodBeingTested\_WhatGeneralTypeOfInput\_ExpectedResult - The most common use case of this will be Valid or Bad Input (Bad Input used instead of Invalid because Invalid and Valid look too similar to be immediately distinct from each other). Input for methods with data
+rows shall be specified as input, num, or some other general name specifying what type of input is coming into the test method. An example of this may be the following.
+Example – A unit test that tests CarCompator’s compare method may be named as such. (in the file CarComparatorTests)
+\newline
+\enquote{Compare\_CompareTwoIdenticalCars\_Returns0}
+\newline
+The Unit test of course would do just this, pass two identical cars into the comparator compare Method and verify that they in fact return the expected result.
+\newline
+\subsection{Code}
+The actual code of the unit test should adhere to the coding standards we have set for all of our other source code, this rule is subject to change in the future.
+\section{Git Conventions }
+The Main project will have its own dedicated repository and the current updated project will be located on the master branch. Whenever one or more persons decides to work on a given feature, they will create a branch from master and begin work on said feature, when said feature is done, they will update their current branch with any changes from master that may have occured, and then submit a pull request (PR) back into master. Any changes made to master must be approved by at least 2 out of the 3 team members, and will always be done using a PR.. In short, any changes to the master branch must be submitted via aPR, and one team member other than the PR submitter must approve said PR before the changes are added to master.
+
+\section{Code Style Conventions}
+\subsection{Conditional}
+Conditional statements and any loops will always follow the indentation rules as described above, even when code braces are not necessary. \newline 
+EXAMPLE 
+\newline 
+if(a $<$ 10) \newline
+\hspace*{1cm}a++; \newline \newline
+$\wedge \wedge $THIS IS WRONG \newline 
+\newline
+if(a $<$ 10 )\{ \newline
+\hspace*{1cm}a++; \newline 
+\}
+\end{document}
