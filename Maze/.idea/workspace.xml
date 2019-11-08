@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bccec665-4709-4eb9-9399-527090c517b0" name="Default" comment="this is a test of codestream">
-      <change afterPath="$PROJECT_DIR$/src/MazeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tests/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maze.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Maze.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Maze/Maze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Maze/Maze.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Maze/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Maze/Program.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Maze/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Maze/Question.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Maze.java" afterDir="false" />
-    </list>
+    <list default="true" id="bccec665-4709-4eb9-9399-527090c517b0" name="Default" comment="this is a test of codestream" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +87,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.MazeTest.thisIsATestTest">
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -133,6 +124,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MazeTest.thisIsATestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Maze" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MazeTest" />
+      <option name="METHOD_NAME" value="thisIsATestTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -140,8 +142,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="test" type="JUnit" factoryName="JUnit">
+      <module name="Maze" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Program" />
+      <item itemvalue="JUnit.test" />
+      <item itemvalue="JUnit.MazeTest.thisIsATestTest" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MazeTest.thisIsATestTest" />
         <item itemvalue="Application.Program" />
       </list>
     </recent_temporary>
@@ -158,7 +177,7 @@
       <updated>1572919699321</updated>
       <workItem from="1572919703317" duration="208000" />
       <workItem from="1573230722812" duration="937000" />
-      <workItem from="1573231881945" duration="1778000" />
+      <workItem from="1573231881945" duration="2065000" />
     </task>
     <task id="LOCAL-00001" summary="this is a test of codestream">
       <created>1573232532954</created>
