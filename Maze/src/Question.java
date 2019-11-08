@@ -1,2 +1,2 @@
-public class Question {
+public abstract class Question {
 }
