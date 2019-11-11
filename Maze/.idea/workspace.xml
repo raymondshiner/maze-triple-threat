@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bccec665-4709-4eb9-9399-527090c517b0" name="Default" comment="this is a test of codestream" />
+    <list default="true" id="bccec665-4709-4eb9-9399-527090c517b0" name="Default" comment="this is a test of codestream">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Maze/Door.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Maze/Door.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Maze/Maze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Maze/Maze.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Maze/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Maze/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Maze/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Maze/Room.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Door.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Maze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MultipleChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultipleChoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,6 +190,7 @@
       <workItem from="1572919703317" duration="208000" />
       <workItem from="1573230722812" duration="937000" />
       <workItem from="1573231881945" duration="2065000" />
+      <workItem from="1573505039552" duration="1047000" />
     </task>
     <task id="LOCAL-00001" summary="this is a test of codestream">
       <created>1573232532954</created>
