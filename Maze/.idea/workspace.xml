@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bccec665-4709-4eb9-9399-527090c517b0" name="Default" comment="this is a test of codestream">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maze.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Maze.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Maze/Maze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Maze/Maze.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Maze/MultipleChoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Maze/MultipleChoice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Maze/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Maze/Program.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Maze/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Maze/Question.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MultipleChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultipleChoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Question.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -239,7 +231,7 @@
       <workItem from="1572919703317" duration="208000" />
       <workItem from="1573230722812" duration="937000" />
       <workItem from="1573231881945" duration="2065000" />
-      <workItem from="1573505039552" duration="4093000" />
+      <workItem from="1573505039552" duration="6114000" />
     </task>
     <task id="LOCAL-00001" summary="this is a test of codestream">
       <created>1573232532954</created>
