@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="bccec665-4709-4eb9-9399-527090c517b0" name="Default" comment="this is a test of codestream">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MultipleChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultipleChoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Maze/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Maze/Program.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Maze/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Maze/Question.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +41,13 @@
         <item name="test" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="test" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="Question: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -230,7 +241,7 @@
       <workItem from="1573231881945" duration="2065000" />
       <workItem from="1573505039552" duration="6773000" />
       <workItem from="1573579468676" duration="834000" />
-      <workItem from="1573583026861" duration="1829000" />
+      <workItem from="1573583026861" duration="7631000" />
     </task>
     <task id="LOCAL-00001" summary="this is a test of codestream">
       <created>1573232532954</created>
