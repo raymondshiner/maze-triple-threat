@@ -14,7 +14,7 @@ class MazeTest {
 
 
     @Test
-    public void displayMaze_ValidOutput_ObjectInstantiated(){
+    public void displayMaze_InstatiateObject_ReturnsExpectedOutput(){
         Maze maze = new Maze();
         String expected = "P: Player\nE: Exit\n************\n" +
                 "*P|| || || *\n" +
