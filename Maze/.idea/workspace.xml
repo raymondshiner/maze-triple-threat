@@ -4,6 +4,11 @@
     <list default="true" id="bccec665-4709-4eb9-9399-527090c517b0" name="Default" comment="this is a test of codestream">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Maze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program.java" afterDir="false" />
+=======
       <change beforePath="$PROJECT_DIR$/out/production/Maze/Door.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Maze/Maze.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Maze/MazeTest.class" beforeDir="false" />
@@ -15,6 +20,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/Maze/Tests/test.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Maze.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MazeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MazeTest.java" afterDir="false" />
+>>>>>>> master
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,8 +107,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -176,7 +182,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -322,9 +328,16 @@
       <workItem from="1573231881945" duration="2065000" />
       <workItem from="1573505039552" duration="6773000" />
       <workItem from="1573579468676" duration="834000" />
+<<<<<<< HEAD
+      <workItem from="1573583026861" duration="7819000" />
+      <workItem from="1573957522628" duration="2156000" />
+      <workItem from="1574023439159" duration="1607000" />
+      <workItem from="1574302117282" duration="819000" />
+=======
       <workItem from="1573583026861" duration="7631000" />
       <workItem from="1574126857555" duration="665000" />
       <workItem from="1574220428595" duration="639000" />
+>>>>>>> master
     </task>
     <task id="LOCAL-00001" summary="this is a test of codestream">
       <created>1573232532954</created>
