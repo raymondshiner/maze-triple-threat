@@ -10,6 +10,18 @@ public class Program {
     {
         //MultipleChoice tmp = new MultipleChoice();
 
+        Door up = new Door();
+        up.lock();
+
+        Door down = new Door();
+        down.open();
+
+        Wall left = new Wall();
+        Door right = new Door();
+
+        Room room = new Room(up, down, right, left);
+
+        room.displayRoom();
         //System.out.println("Hello World!");
         //did this work
         playGameMenu();
