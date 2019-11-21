@@ -34,7 +34,21 @@ public class Maze {
         return "this is a drawing of a fancy maze in ascii art \n ....... why dont you believe me?????";
     }
 
-
+    public String displayMaze(){
+        String s = "P: Player\nE: Exit";
+        return(s + "\n************\n" +
+                "*P|| || || *\n" +
+                "*-**-**-**-*\n" +
+                "*-**-**-**-*\n" +
+                "* || || || *\n" +
+                "*-**-**-**-*\n" +
+                "*-**-**-**-*\n" +
+                "* || || || *\n" +
+                "*-**-**-**-*\n" +
+                "*-**-**-**-*\n" +
+                "* || || ||E|\n" +
+                "************\n");
+    }
 
 
 
