@@ -1,4 +1,4 @@
-public class Door {
+public class Door implements IBarrier {
     private boolean locked;
     private boolean closed;
     private Question question;
@@ -23,12 +23,15 @@ public class Door {
         return this.locked;
     }
     public void open(){
-        // this in UML is setClosed change UML to match this better name
+        this.closed = false;
     }
     public void lock(){
-        // not in UML yet
+        this.locked = true;
     }
 
 
-
+    @Override
+    public boolean isAWall() {
+        return false;
+    }
 }
