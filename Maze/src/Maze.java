@@ -6,7 +6,7 @@ public class Maze {
 
     public Maze(){
 
-        System.out.println();
+        //System.out.println();
     }
 
     private void buildMaze(){
@@ -28,6 +28,10 @@ public class Maze {
     private boolean canSolve(){
         // called after every failed trivia question
         return false;
+    }
+    @Override
+    public String toString(){
+        return "this is a drawing of a fancy maze in ascii art \n ....... why dont you believe me?????";
     }
 
     public String displayMaze(){
