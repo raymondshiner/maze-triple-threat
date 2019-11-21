@@ -4,15 +4,15 @@ public class Game {
     // will handle the game menue
     // moving and stuff like that
     private Maze theMaze;
-    private boolean saved;
-    private boolean over;
+    private boolean gameIsSaved;
+    private boolean gameIsOver;
     public Game(){
         theMaze = new Maze();
-        saved = false;
-        over =false;
+        gameIsSaved = false;
+        gameIsOver =false;
     }
-    public boolean isOver(){
-        return over;
+    public boolean isGameOver(){
+        return gameIsOver;
     }
     public int printMenu(){
         // print maze
@@ -40,7 +40,7 @@ public class Game {
             case 5:
                 //this would be quit
                 if(quit(input)){
-                    this.over = true;
+                    this.gameIsOver = true;
                     return 0;
                 }
                 break;
@@ -52,26 +52,27 @@ public class Game {
         return 0;
     }
     private boolean quit(Scanner input ){
-        if(!saved){
+        boolean tryAgain = false;
+        if(!gameIsSaved){
             System.out.println("does the user really want to quit without saving y/n");
             String choice = input.nextLine();
             do{
 
-                if(choice.equals("y")){
+                if(choice.equalsIgnoreCase("y")){
                     return true;
-                }else if(choice.equals("n")){
+                }else if(choice.equalsIgnoreCase("n")){
                     return false;
                 }
                 System.out.println("invalid input try again");
                 System.out.println("does the user really want to quit without saving y/n");
                 choice = input.nextLine();
-
-            }while(1 == 1);
+                tryAgain = true;
+            }while(tryAgain);
 
         }else{
             return true;
         }
-
+        return false;
     }
 
 

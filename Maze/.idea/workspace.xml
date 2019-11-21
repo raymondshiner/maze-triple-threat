@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bccec665-4709-4eb9-9399-527090c517b0" name="Default" comment="this is a test of codestream">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Maze/Game.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Maze/Maze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Maze/Maze.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Maze/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Maze/Program.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Maze.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program.java" afterDir="false" />
     </list>
@@ -245,7 +241,8 @@
       <workItem from="1573579468676" duration="834000" />
       <workItem from="1573583026861" duration="7819000" />
       <workItem from="1573957522628" duration="2156000" />
-      <workItem from="1574023439159" duration="1143000" />
+      <workItem from="1574023439159" duration="1607000" />
+      <workItem from="1574302117282" duration="819000" />
     </task>
     <task id="LOCAL-00001" summary="this is a test of codestream">
       <created>1573232532954</created>
@@ -276,16 +273,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="this is a test of codestream" />
     <option name="LAST_COMMIT_MESSAGE" value="this is a test of codestream" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Game.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

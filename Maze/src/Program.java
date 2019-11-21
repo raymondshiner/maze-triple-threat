@@ -12,9 +12,9 @@ public class Program {
 
         //System.out.println("Hello World!");
         //did this work
-        firstMenu();
+        playGameMenu();
     }
-    public static void firstMenu(){
+    public static void playGameMenu(){
         Scanner input = new Scanner(System.in);
         System.out.println("Welcome to Trivia Maze");
 
@@ -32,16 +32,15 @@ public class Program {
                 theGame = new Game();
                 do{
                     playGameTurn();
-                }while(!theGame.isOver());
+                }while(!theGame.isGameOver());
                 // create and start game
                 done = false;
-            }else if(choice.equals("n")){
+            }else if(choice.equalsIgnoreCase("n")){
                 // exit while loop so that the program will stop
                 done = true;
             }else{
                 // not a valid choice try again
                 System.out.println("Not a valid choice try again");
-                done = false;
             }
         }while(!done);
     }
