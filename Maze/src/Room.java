@@ -5,23 +5,31 @@ public class Room {
     private IBarrier eastBarrier;
     private IBarrier westBarrier;
 
-    public Room(IBarrier north, IBarrier south, IBarrier east, IBarrier west) {
-
-        if (north == null || south == null || east == null || west == null)
-            throw new IllegalArgumentException("Cannot have null properties for Room");
-
-        northBarrier = north;
-        southBarrier = south;
-        eastBarrier = east;
-        westBarrier = west;
+    public Room()
+    {
+        northBarrier = new Door();
+        southBarrier = new Door();
+        eastBarrier = new Door();
+        westBarrier = new Door();
     }
+
+    public void setNorthBarrier(IBarrier barrier) { northBarrier = barrier; }
+    public void setSouthBarrier(IBarrier barrier) { southBarrier = barrier; }
+    public void setEastBarrier(IBarrier barrier) { eastBarrier = barrier; }
+    public void setWestBarrier(IBarrier barrier) { westBarrier = barrier; }
+
+    public IBarrier getNorthBarrier() { return northBarrier; }
+    public IBarrier getSouthBarrier() { return southBarrier; }
+    public IBarrier getEastBarrier() { return eastBarrier; }
+    public IBarrier getWestBarrier() { return westBarrier; }
+
 
     public void displayRoom()
     {
-        String up = "Up - " + constructBarrierString(northBarrier);
-        String left = "Left - " + constructBarrierString(westBarrier);
-        String right = "Right - " + constructBarrierString(eastBarrier);
-        String down = "Down - " + constructBarrierString(southBarrier);
+        String up = "North - " + constructBarrierString(northBarrier);
+        String left = "West - " + constructBarrierString(westBarrier);
+        String right = "East - " + constructBarrierString(eastBarrier);
+        String down = "South - " + constructBarrierString(southBarrier);
 
         System.out.println(up);
         System.out.println(left);
@@ -39,10 +47,10 @@ public class Room {
         if(door.isLocked())
             return str + "(Locked)";
 
-        if(door.isClosed())
-            return str + "(Closed)";
+        if(door.isOpen())
+            return str + "(Open)";
 
-        return str + "(Open)";
+        return str + "(Closed)";
     }
 
 }

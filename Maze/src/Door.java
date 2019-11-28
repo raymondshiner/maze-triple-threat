@@ -1,13 +1,13 @@
 public class Door implements IBarrier {
-    private boolean locked;
-    private boolean closed;
+    private boolean isLocked;
+    private boolean isOpen;
     private Question question;
 
     public Door(){
-        this.locked = false;
-        this.closed = true;
-        //to start doors are always closed but not locked yet
-        // when a question is answered they will either open or lock
+        this.isLocked = false;
+        this.isOpen = false;
+        //to start doors are always closed but not isLocked yet
+        // when a question is answered they will either isOpen or lock
 
     }
     public boolean canOpen(){
@@ -16,17 +16,17 @@ public class Door implements IBarrier {
     public Question getQuestion(){
         return null;
     }
-    public boolean isClosed(){
-        return this.closed;
+    public boolean isOpen(){
+        return this.isOpen;
     }
     public boolean isLocked(){
-        return this.locked;
+        return this.isLocked;
     }
     public void open(){
-        this.closed = false;
+        this.isOpen = true;
     }
     public void lock(){
-        this.locked = true;
+        this.isLocked = true;
     }
 
 
