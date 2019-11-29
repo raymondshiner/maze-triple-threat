@@ -8,7 +8,6 @@ public class Door implements IBarrier {
         this.closed = true;
         //to start doors are always closed but not locked yet
         // when a question is answered they will either open or lock
-
     }
     public boolean canOpen(){
         return false;

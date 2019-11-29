@@ -1,4 +1,11 @@
-package PACKAGE_NAME;
+public class ShortAnswer extends Question {
 
-public class ShortAnswer {
+    public ShortAnswer() {
+        super();
+    }
+
+    @Override
+    public boolean checkAnswer(String toCheck) {
+        return false;
+    }
 }

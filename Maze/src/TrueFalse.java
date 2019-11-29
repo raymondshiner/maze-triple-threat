@@ -1,4 +1,11 @@
-package PACKAGE_NAME;
+public class TrueFalse extends Question {
 
-public class TrueFalse {
+    public TrueFalse() {
+        super();
+    }
+
+    @Override
+    public boolean checkAnswer(String toCheck) {
+        return false;
+    }
 }
