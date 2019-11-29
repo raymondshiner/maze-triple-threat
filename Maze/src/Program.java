@@ -8,6 +8,10 @@ public class Program {
     private static Game theGame;
     public static void main(String [] args)
     {
+        playGameMenu();
+
+
+        /*
         //MultipleChoice tmp = new MultipleChoice();
 
         Door up = new Door();
@@ -19,12 +23,18 @@ public class Program {
         Wall left = new Wall();
         Door right = new Door();
 
-        Room room = new Room(up, down, right, left);
+        Room room = new Room();
+
+        room.setNorthBarrier(up);
+        room.setEastBarrier(right);
+        room.setWestBarrier(left);
+        room.setSouthBarrier(down);
 
         room.displayRoom();
         //System.out.println("Hello World!");
         //did this work
         playGameMenu();
+        */
     }
     public static void playGameMenu(){
         Scanner input = new Scanner(System.in);
@@ -57,7 +67,7 @@ public class Program {
         }while(!done);
     }
     private static int playGameTurn(){
-        theGame.printMenu();
+        theGame.moveMenu();
 
         return 0;
     }

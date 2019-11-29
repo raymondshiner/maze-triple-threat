@@ -11,11 +11,19 @@ class MazeTest {
         assertEquals(1,1);
     }
 
+    @Test
+    public void constructor_NullPlayerParamter_throwsIllegalArgumentException()
+    {
+        assertThrows(IllegalArgumentException.class, () -> {
+            Maze maze = new Maze(null);
+        });
+    }
+
 
 
     @Test
     public void displayMaze_InstatiateObject_ReturnsExpectedOutput(){
-        Maze maze = new Maze();
+        Maze maze = new Maze(new Player());
         String expected = "P: Player\nE: Exit\n************\n" +
                 "*P|| || || *\n" +
                 "*-**-**-**-*\n" +
@@ -28,6 +36,6 @@ class MazeTest {
                 "*-**-**-**-*\n" +
                 "* || || ||E|\n" +
                 "************\n";
-        assertEquals(expected, maze.displayMaze());
+        assertEquals(expected, maze.getMazeLayout());
     }
 }
