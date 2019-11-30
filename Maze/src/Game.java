@@ -58,7 +58,7 @@ public class Game {
                 tmp.writeObject(theMaze);
                 tmp.close();
                 file.close();
-                gameIsSaved = true;
+                gameIsSaved = true; 
             }
 
             else if(choiceIsQuit)

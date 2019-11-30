@@ -70,7 +70,7 @@ public class Program {
                 try{
                     FileInputStream ifile = new FileInputStream("test.bin");
                     ObjectInputStream igame = new ObjectInputStream(ifile);
-                    theGame  =  new Game( (Maze) igame.readObject()) ;
+                    theGame  =  new Game( (Maze) igame.readObject());
                 }catch(IOException e ) {
                     System.out.println(e);
                     return;
