@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.Scanner;
 
 public class Game {
@@ -6,19 +7,33 @@ public class Game {
     private Maze theMaze;
     private boolean gameIsSaved;
     private boolean gameIsOver;
-    public Game(){
+    private final String [] saves;
+    public Game() throws IOException {
+        // names of the save files more can be added for release
+        this.saves = new String[] {"save1", "save2", "save2"};
         theMaze = new Maze(new Player());
         gameIsSaved = false;
         gameIsOver =false;
         System.out.println("Starting New Game, this is the maze Layout");
         System.out.println(theMaze.getMazeLayout());
     }
+    public Game(Maze savedGame){
+        this.saves = new String[] {"save1", "save2", "save2"};
+        gameIsSaved = true;
+        gameIsOver = false;
+        // this may be incorrect
+        // is it possible for the game to be over and then be saved if no then no changes nessessary
+        this.theMaze = savedGame;
+        System.out.println("Starting saved game here is where you left off ");
+        System.out.println(theMaze.getMazeLayout());
+    }
+
     public boolean isGameOver(){
         return gameIsOver;
     }
 
 
-    public int moveMenu(){
+    public int moveMenu() throws IOException {
 
         Scanner input = new Scanner(System.in);
         String choice;
@@ -38,6 +53,12 @@ public class Game {
             if(choiceIsSave)
             {
                 System.out.println("Saving Game");
+                FileOutputStream file = new FileOutputStream("test.bin");
+                ObjectOutputStream tmp = new ObjectOutputStream(file);
+                tmp.writeObject(theMaze);
+                tmp.close();
+                file.close();
+                gameIsSaved = true;
             }
 
             else if(choiceIsQuit)
@@ -71,7 +92,21 @@ public class Game {
         return false;
 
     }
+    private void userWantsToSave(Scanner input){
+        do{
+            printSaves();
+            int userChoice = input.nextInt();
+        }while(true);
 
+
+    }
+    private void printSaves(){
+        System.out.println("here are your saves to choose from ");
+        for(int i = 0 ; i < saves.length ; i++){
+            System.out.println(i +": " +saves[i]);
+        }
+        System.out.println("please choose the number that you would like to save your game to");
+    }
 
     private boolean userWantsToQuit(Scanner input){
         boolean tryAgain;

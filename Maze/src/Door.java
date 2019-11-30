@@ -1,4 +1,6 @@
-public class Door implements IBarrier {
+import java.io.Serializable;
+
+public class Door implements IBarrier , Serializable {
     private boolean isLocked;
     private boolean isOpen;
     private Question question;
