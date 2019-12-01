@@ -8,6 +8,8 @@ public class Program {
     private static Game theGame;
     public static void main(String [] args)
     {
+        QuestionFactory tmp = new QuestionFactory();
+        Question theQuestion = tmp.getTheQuestion();
         playGameMenu();
 
 
