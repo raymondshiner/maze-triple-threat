@@ -1,4 +1,6 @@
-public abstract class Question {
+import java.io.Serializable;
+
+public abstract class Question implements Serializable {
     private String theQuestion;
     public Question(String input){
         this.theQuestion = input;
