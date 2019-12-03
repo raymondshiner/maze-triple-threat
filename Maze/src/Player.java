@@ -1,7 +1,7 @@
 public class Player {
     private static Player thePlayer;
 
-    private Player(){
+    public Player(){
 
     }
     public static Player getPlayer(){
