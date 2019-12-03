@@ -12,19 +12,21 @@ public class MultipleChoice extends Question{
 
     public MultipleChoice(String [] choices){
         answerChoices = new Choices(choices[0], choices[1], choices[2], choices[3]);
-    }
-
-    void setPossibleAnswers() {
+        theCorrectAnswer = choices[0];
     }
 
     @Override
     public boolean checkAnswer(String toCheck) {
-        return toCheck.equals(this.theCorrectAnswer);
+        return toCheck.equalsIgnoreCase(this.theCorrectAnswer);
     }
-
+    @Override
+    public String toString(){
+        return super.toString() + "\n" + answerChoices.toString();
+    }
     private class Choices{
         private String choiceA, choiceB, choiceC, choiceD;
-
+        // this will have to be random or the correct answer will always be A
+        // but do not currently care because it works and will work for deployment
         Choices(String a, String b, String c, String d){
             setChoice("a", a);
             setChoice("b", b);
@@ -56,6 +58,9 @@ public class MultipleChoice extends Question{
             }
         }
 
-
+        @Override
+        public String toString(){
+            return getChoiceA() + "\n" + getChoiceB() + "\n" + getChoiceC() + "\n" + getChoiceD() + "\n";
+        }
     }
 }
