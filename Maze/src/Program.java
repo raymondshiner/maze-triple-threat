@@ -1,3 +1,6 @@
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.Scanner;
 
 public class Program {
@@ -6,10 +9,14 @@ public class Program {
     // new
     //exit
     private static Game theGame;
+<<<<<<< HEAD
     public static void main(String [] args)
     {
         QuestionFactory tmp = new QuestionFactory();
         Question theQuestion = tmp.getTheQuestion();
+=======
+    public static void main(String [] args) throws IOException, ClassNotFoundException {
+>>>>>>> master
         playGameMenu();
 
 
@@ -38,7 +45,7 @@ public class Program {
         playGameMenu();
         */
     }
-    public static void playGameMenu(){
+    public static void playGameMenu() throws IOException, ClassNotFoundException {
         Scanner input = new Scanner(System.in);
         System.out.println("Welcome to Trivia Maze");
 
@@ -49,9 +56,12 @@ public class Program {
             // asks user if want to start a new game else quit
             // possible load saved games from this menu
             
-            System.out.println("Would you like to start a new game ? y/n");
+            System.out.println("1 Would you like to start a new game ? ");
+            System.out.println("2 Would you like load a previous game ?");
+            System.out.println("3 quit ");
+
             choice = input.nextLine();
-            if(choice.equals("y")){
+            if(choice.equals("1")){
                 // this is the only call to the game object right now
                 theGame = new Game();
                 do{
@@ -59,16 +69,31 @@ public class Program {
                 }while(!theGame.isGameOver());
                 // create and start game
                 done = false;
-            }else if(choice.equalsIgnoreCase("n")){
+            }else if(choice.equalsIgnoreCase("3")){
                 // exit while loop so that the program will stop
                 done = true;
+            }else if (choice.equalsIgnoreCase("2")){
+                // load game
+                try{
+                    FileInputStream ifile = new FileInputStream("test.bin");
+                    ObjectInputStream igame = new ObjectInputStream(ifile);
+                    theGame  =  new Game( (Maze) igame.readObject());
+                }catch(IOException e ) {
+                    System.out.println(e);
+                    return;
+                }catch (ClassNotFoundException e ) {
+                    return;
+                }
+                do{
+                    playGameTurn();
+                }while(!theGame.isGameOver());
             }else{
                 // not a valid choice try again
                 System.out.println("Not a valid choice try again");
             }
         }while(!done);
     }
-    private static int playGameTurn(){
+    private static int playGameTurn() throws IOException {
         theGame.moveMenu();
 
         return 0;

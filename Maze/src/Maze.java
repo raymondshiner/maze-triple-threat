@@ -1,4 +1,6 @@
-public class Maze {
+import java.io.Serializable;
+
+public class Maze  implements Serializable {
     private Room [][] rooms;
     private Player player;
     private int playerRow;
