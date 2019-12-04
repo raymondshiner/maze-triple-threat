@@ -1,4 +1,6 @@
-public abstract class Question {
+import java.io.Serializable;
+
+public abstract class Question implements Serializable {
     private String theQuestion;
     private String theAnswer;
     private final String cheat = "42";

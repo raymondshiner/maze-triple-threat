@@ -1,9 +1,15 @@
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.sql.*;
 
+<<<<<<< HEAD
 public class MultipleChoice extends Question{
     private Choices answerChoices;
+=======
+public class MultipleChoice extends Question {
+    private String [] thePossibleAnswers;
+>>>>>>> master
     private String theCorrectAnswer;
 
     public MultipleChoice() {
