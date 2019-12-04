@@ -6,6 +6,9 @@ public class Door implements IBarrier , Serializable {
     private Question question;
 
     public Door(){
+        //to start doors are always closed but not locked yet
+        // when a question is answered they will either open or lock
+
         this.isLocked = false;
         this.isOpen = false;
         //to start doors are always closed but not isLocked yet
