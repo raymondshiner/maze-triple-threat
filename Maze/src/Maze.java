@@ -7,36 +7,39 @@ public class Maze  implements Serializable {
     private int playerCol;
     private Room currentRoom;
 
-    public Maze(Player thePlayer){
+    public Maze(Player thePlayer, int row, int col){
 
         if(thePlayer == null)
             throw new IllegalArgumentException("Maze Constructor player is null");
 
-        buildMaze(thePlayer);
+        if(row < 1 || col < 1)
+            throw new IllegalArgumentException("Maze Constructor can't have <1 length or depth");
+
+        buildMaze(thePlayer, row, col);
     }
 
-    private void buildMaze(Player thePlayer){
-        rooms = new Room[5][5];
+    private void buildMaze(Player thePlayer, int row, int col){
+        rooms = new Room[row][col];
         player = thePlayer;
         playerRow = 0;
         playerCol = 0;
 
-        for(int x = 0; x < 5; x++)
+        for(int x = 0; x < row; x++)
         {
-            for(int y = 0; y<5; y++)
+            for(int y = 0; y<col; y++)
             {
                 Room room = new Room(); //Room by default is all doors
 
                 if(x == 0) //first row of maze
                     room.setNorthBarrier(new Wall());
 
-                if(x == 4)
+                if(x == row-1)
                     room.setSouthBarrier(new Wall());
 
                 if(y == 0) //first column of maze
                     room.setWestBarrier(new Wall());
 
-                if(y == 4) //last column of maze
+                if(y == col-1) //last column of maze
                     room.setEastBarrier(new Wall());
 
                 rooms[x][y] = room;
@@ -159,18 +162,15 @@ public class Maze  implements Serializable {
     }
 
     public String getMazeLayout(){
-        String s = "P: Player\nE: Exit";
-        return(s + "\n***************\n" +
-                "*P|| || || || *\n" +
-                "*-**-**-**-**-*\n" +
-                "*-**-**-**-**-*\n" +
-                "* || || || || *\n" +
-                "*-**-**-**-**-*\n" +
-                "*-**-**-**-**-*\n" +
-                "* || || || || *\n" +
-                "*-**-**-**-**-*\n" +
-                "*-**-**-**-**-*\n" +
-                "* || || || ||E|\n" +
-                "***************\n");
+        String s = "P: Player\nE: Exit\n";
+        return(s +  "***********\n" +
+                    "*P| | | | *\n" +
+                    "*-*-*-*-*-*\n" +
+                    "* | | | | *\n" +
+                    "*-*-*-*-*-*\n" +
+                    "* | | | | *\n" +
+                    "*-*-*-*-*-*\n" +
+                    "* | | | |E|\n" +
+                    "***********\n");
     }
 }
