@@ -9,14 +9,8 @@ public class Program {
     // new
     //exit
     private static Game theGame;
-<<<<<<< HEAD
-    public static void main(String [] args)
-    {
-        QuestionFactory tmp = new QuestionFactory();
-        Question theQuestion = tmp.getTheQuestion();
-=======
+
     public static void main(String [] args) throws IOException, ClassNotFoundException {
->>>>>>> master
         playGameMenu();
 
 

@@ -8,7 +8,7 @@ public class QuestionFactory {
     public QuestionFactory(){
 
     }
-    public Question getTheQuestion(){
+    public Question getTheQuestion() throws SQLException {
         // this will return a random question
         Random rand = new Random(System.currentTimeMillis());
         int toChose;
@@ -21,6 +21,20 @@ public class QuestionFactory {
         ResultSet results = queryTheDatabase(myCon , toChose , databaseToGetQuestionFrom);
         // have the question here need to know the constructors for the types of questions and then will add based on the String
         // databaseToGetQuestionsFrom
+        switch(databaseToGetQuestionFrom){
+            case "MultipleChoice":
+                String tmp [] = {results.getString("a") , results.getString("b"), results.getString("c") ,results.getString("d")};
+                String correct = results.getString("Answer") ;
+                return new MultipleChoice( results.getString("Question"), tmp, correct );
+
+            case "ShortAnswer":
+                return new ShortAnswer(results.getString("Question") , results.getString("Answer") );
+
+            case "TrueFalse":
+                return new TrueFalse(results.getString("Question") , results.getString("Answer"));
+            default:
+                break;
+        }
         return null;
     }
     private String choseTable(String [] databases , int[] counts , int total ){

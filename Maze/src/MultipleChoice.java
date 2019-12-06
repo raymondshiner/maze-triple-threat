@@ -3,22 +3,19 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.sql.*;
 
-<<<<<<< HEAD
 public class MultipleChoice extends Question{
     private Choices answerChoices;
-=======
-public class MultipleChoice extends Question {
-    private String [] thePossibleAnswers;
->>>>>>> master
+
     private String theCorrectAnswer;
 
     public MultipleChoice() {
         super();
     }
 
-    public MultipleChoice(String [] choices){
+    public MultipleChoice(String question , String [] choices , String answer){
+        super(question);
         answerChoices = new Choices(choices[0], choices[1], choices[2], choices[3]);
-        theCorrectAnswer = choices[0];
+        theCorrectAnswer = answer;
     }
 
     @Override
