@@ -24,18 +24,19 @@ class MazeTest {
     @Test
     public void displayMaze_InstatiateObject_ReturnsExpectedOutput(){
         Maze maze = new Maze(new Player());
-        String expected = "P: Player\nE: Exit\n************\n" +
-                "*P|| || || *\n" +
-                "*-**-**-**-*\n" +
-                "*-**-**-**-*\n" +
-                "* || || || *\n" +
-                "*-**-**-**-*\n" +
-                "*-**-**-**-*\n" +
-                "* || || || *\n" +
-                "*-**-**-**-*\n" +
-                "*-**-**-**-*\n" +
-                "* || || ||E|\n" +
-                "************\n";
+        String expected = "P: Player\nE: Exit" +
+                "\n***************\n" +
+                "*P|| || || || *\n" +
+                "*-**-**-**-**-*\n" +
+                "*-**-**-**-**-*\n" +
+                "* || || || || *\n" +
+                "*-**-**-**-**-*\n" +
+                "*-**-**-**-**-*\n" +
+                "* || || || || *\n" +
+                "*-**-**-**-**-*\n" +
+                "*-**-**-**-**-*\n" +
+                "* || || || ||E|\n" +
+                "***************\n";
         assertEquals(expected, maze.getMazeLayout());
     }
 }
