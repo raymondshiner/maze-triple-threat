@@ -11,14 +11,14 @@ public class Game {
     public Game() throws IOException {
         // names of the save files more can be added for release
         this.saves = new String[] {"save1", "save2", "save2"};
-        theMaze = new Maze(new Player());
+        theMaze = new Maze(new Player(), 5, 5);
         gameIsSaved = false;
         gameIsOver =false;
         System.out.println("Starting New Game, this is the maze Layout");
         System.out.println(theMaze.getMazeLayout());
     }
     public Game(Maze savedGame){
-        this.saves = new String[] {"save1", "save2", "save2"};
+        this.saves = new String[] {"save1", "save2", "save3"};
         gameIsSaved = true;
         gameIsOver = false;
         // this may be incorrect
