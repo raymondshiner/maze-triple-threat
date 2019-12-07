@@ -1,6 +1,7 @@
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Program {
@@ -9,8 +10,16 @@ public class Program {
     // new
     //exit
     private static Game theGame;
-    public static void main(String [] args) throws IOException, ClassNotFoundException {
-        playGameMenu();
+
+    public static void main(String [] args) throws IOException, ClassNotFoundException, SQLException {
+        //playGameMenu();
+        SpencerIsAnIdiot tmp = new SpencerIsAnIdiot();
+        for(int i  = 0 ; i < 100 ; i++){
+            Question t = tmp.getQuestion();
+            System.out.println(t);
+        }
+
+
 
 
         /*
