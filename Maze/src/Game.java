@@ -1,4 +1,5 @@
 import java.io.*;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Game {
@@ -14,6 +15,10 @@ public class Game {
         theMaze = new Maze(new Player(), 5, 5);
         gameIsSaved = false;
         gameIsOver =false;
+        System.out.println();
+        System.out.println("ALERT - This is a Harry Potter Themed Maze and will ask you HP universe questions");
+        System.out.println("If you don't know harry potter and don't want spoilers, turn back now");
+        System.out.println();
         System.out.println("Starting New Game, this is the maze Layout");
         System.out.println(theMaze.getMazeLayout());
     }
@@ -39,6 +44,24 @@ public class Game {
         String choice;
 
         do {
+
+            if(theMaze.getCurrentRoom().isTheExit())
+            {
+                System.out.println("You Found the Exit! Congratulations!");
+                System.out.println();
+                System.out.println("CREDITS:");
+                System.out.println("Triple Threat");
+                System.out.println("    Fearless Leader - Daylyn Hoxie");
+                System.out.println("    Code Monkey - Spencer Curley");
+                System.out.println("    Moral Support - Raymond Shiner");
+                System.out.println();
+                System.out.println("Thanks for Playing!");
+
+                gameIsOver = true;
+                return 0;
+            }
+
+
             theMaze.printCurrentRoom();
 
             System.out.println("Please make a move (north, south, east, west, quit, save):");

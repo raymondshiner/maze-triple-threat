@@ -6,6 +6,7 @@ public class Room implements Serializable {
     private IBarrier southBarrier;
     private IBarrier eastBarrier;
     private IBarrier westBarrier;
+    private boolean isTheExit;
 
     public Room()
     {
@@ -13,6 +14,7 @@ public class Room implements Serializable {
         southBarrier = new Door();
         eastBarrier = new Door();
         westBarrier = new Door();
+        isTheExit = false;
     }
 
     public void setNorthBarrier(IBarrier barrier) { northBarrier = barrier; }
@@ -55,4 +57,11 @@ public class Room implements Serializable {
         return str + "(Closed)";
     }
 
+    public void makeExit() {
+        isTheExit = true;
+    }
+
+    public boolean isTheExit() {
+        return isTheExit;
+    }
 }
