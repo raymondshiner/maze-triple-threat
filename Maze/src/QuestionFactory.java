@@ -112,7 +112,7 @@ public class QuestionFactory {
         String initPath;
         File databasePath = null;
         try{
-            initPath =  ".." +File.separator +  "database" + File.separator+"thisisatest.db" ;
+            initPath =  ".." +File.separator +  "database" + File.separator+"realdb.db" ;
 
             databasePath = new File(initPath);
             // System.out.println(initPath + "\n" + databasePath.getCanonicalPath());
