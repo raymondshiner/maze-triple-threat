@@ -13,5 +13,9 @@ public abstract class Question implements Serializable {
         return false;
     }
     public String toString(){ return this.theQuestion;}
+    public String getAnswer()
+    {
+        return theAnswer;
+    }
 
 }

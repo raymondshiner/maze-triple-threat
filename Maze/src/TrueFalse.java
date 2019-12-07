@@ -7,6 +7,9 @@ public class TrueFalse extends Question {
     }
     @Override
     public boolean checkAnswer(String toCheck) {
+        if(super.checkAnswer(toCheck))
+            return true;
+
         return theAnswer.equalsIgnoreCase(toString());
     }
     @Override

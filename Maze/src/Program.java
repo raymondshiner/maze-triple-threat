@@ -12,7 +12,8 @@ public class Program {
     private static Game theGame;
 
     public static void main(String [] args) throws IOException, ClassNotFoundException, SQLException {
-        //playGameMenu();
+        playGameMenu();
+        /*
         QuestionFactory tmp = new QuestionFactory();
         for(int i  = 0 ; i < 100 ; i++){
             Question t = tmp.getQuestion();
@@ -22,7 +23,7 @@ public class Program {
 
 
 
-        /*
+
         //MultipleChoice tmp = new MultipleChoice();
 
         Door up = new Door();

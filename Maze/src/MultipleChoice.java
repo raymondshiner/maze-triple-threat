@@ -20,6 +20,10 @@ public class MultipleChoice extends Question{
 
     @Override
     public boolean checkAnswer(String toCheck) {
+
+        if(super.checkAnswer(toCheck))
+            return true;
+
         return toCheck.equalsIgnoreCase(this.theCorrectAnswer);
     }
     @Override

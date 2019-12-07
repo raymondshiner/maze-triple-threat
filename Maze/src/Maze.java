@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.util.Scanner;
 
 public class Maze  implements Serializable {
     private Room [][] rooms;
@@ -24,11 +25,32 @@ public class Maze  implements Serializable {
         playerRow = 0;
         playerCol = 0;
 
+        QuestionFactory factory = new QuestionFactory();
+
         for(int x = 0; x < row; x++)
         {
             for(int y = 0; y<col; y++)
             {
                 Room room = new Room(); //Room by default is all doors
+
+                Door north = (Door)room.getNorthBarrier();
+                Door south = (Door)room.getSouthBarrier();
+                Door east = (Door)room.getEastBarrier();
+                Door west = (Door)room.getWestBarrier();
+
+                try
+                {
+                    north.setQuestion(factory.getQuestion());
+                    south.setQuestion(factory.getQuestion());
+                    east.setQuestion(factory.getQuestion());
+                    west.setQuestion(factory.getQuestion());
+                }
+
+                catch(Exception e)
+                {
+                    System.out.println("Something went Wrong");
+                }
+
 
                 if(x == 0) //first row of maze
                     room.setNorthBarrier(new Wall());
@@ -77,12 +99,83 @@ public class Maze  implements Serializable {
 
         if(canMoveThroughBarrier(barrier))
         {
-            movePlayerOneSpace(direction);
-            return true;
+            Door door = (Door)barrier;
+
+            if(door.isOpen())
+            {
+                movePlayerOneSpace(direction);
+                return true;
+            }
+
+            if(answersDoorQuestionCorrectly(door))
+            {
+                movePlayerOneSpace(direction);
+                return true;
+            }
+
+            else
+            {
+                System.out.println("Locking " + direction + " Door");
+                lockDoor(door, direction);
+            }
         }
 
         System.out.println();
         return  false;
+    }
+
+    private boolean answersDoorQuestionCorrectly(Door door)
+    {
+        Question q = door.getQuestion();
+        System.out.println();
+        Scanner kb = new Scanner(System.in);
+
+        System.out.println(q);
+        System.out.print("Answer --> ");
+        String userAnswer = kb.nextLine();
+        userAnswer = userAnswer.trim().toLowerCase();
+
+        boolean rightAnswer = q.checkAnswer(userAnswer);
+
+        if(rightAnswer)
+        {
+            System.out.println("Correct!");
+            return true;
+        }
+
+        else
+        {
+            System.out.println("Sorry, the correct answer was - " + q.getAnswer());
+            return false;
+        }
+    }
+
+    private void lockDoor(Door door, String direction)
+    {
+        Door otherSide = new Door();
+
+        switch(direction)
+        {
+            case "north":
+                door = (Door)currentRoom.getNorthBarrier();
+                otherSide = (Door)rooms[playerRow - 1][playerCol].getSouthBarrier();
+                break;
+            case "south":
+                door = (Door)currentRoom.getSouthBarrier();
+                otherSide = (Door)rooms[playerRow + 1][playerCol].getNorthBarrier();
+                break;
+            case "east":
+                door = (Door)currentRoom.getEastBarrier();
+                otherSide = (Door)rooms[playerRow][playerCol + 1].getWestBarrier();
+                break;
+            case "west":
+                door = (Door)currentRoom.getWestBarrier();
+                otherSide = (Door)rooms[playerRow][playerCol - 1].getEastBarrier();
+                break;
+        }
+
+        otherSide.lock();
+        door.lock();
     }
 
     private void movePlayerOneSpace(String direction) {
@@ -166,14 +259,14 @@ public class Maze  implements Serializable {
     public String getMazeLayout(){
         String s = "P: Player\nE: Exit\n";
         return(s +  "***********\n" +
-                    "*P| | | | *\n" +
-                    "*-*-*-*-*-*\n" +
-                    "* | | | | *\n" +
-                    "*-*-*-*-*-*\n" +
-                    "* | | | | *\n" +
-                    "*-*-*-*-*-*\n" +
-                    "* | | | |E|\n" +
-                    "***********\n");
+                "*P| | | | *\n" +
+                "*-*-*-*-*-*\n" +
+                "* | | | | *\n" +
+                "*-*-*-*-*-*\n" +
+                "* | | | | *\n" +
+                "*-*-*-*-*-*\n" +
+                "* | | | |E|\n" +
+                "***********\n");
     }
 
     public Room getCurrentRoom() {
