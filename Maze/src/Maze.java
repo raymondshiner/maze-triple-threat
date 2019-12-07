@@ -15,7 +15,7 @@ public class Maze  implements Serializable {
         if(row < 1 || col < 1)
             throw new IllegalArgumentException("Maze Constructor can't have <1 length or depth");
 
-        buildMaze(thePlayer, row, col);
+        buildMaze (thePlayer, row, col);
     }
 
     private void buildMaze(Player thePlayer, int row, int col){
@@ -47,6 +47,8 @@ public class Maze  implements Serializable {
         }
 
         currentRoom = rooms[playerRow][playerCol];
+
+        rooms[row-1][col-1].makeExit();
     }
 
     public boolean move(String direction)
@@ -172,5 +174,9 @@ public class Maze  implements Serializable {
                     "*-*-*-*-*-*\n" +
                     "* | | | |E|\n" +
                     "***********\n");
+    }
+
+    public Room getCurrentRoom() {
+        return currentRoom;
     }
 }
