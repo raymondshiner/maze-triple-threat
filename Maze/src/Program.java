@@ -13,9 +13,9 @@ public class Program {
 
     public static void main(String [] args) throws IOException, ClassNotFoundException, SQLException {
         //playGameMenu();
-        QuestionFactory tmp = new QuestionFactory();
+        SpencerIsAnIdiot tmp = new SpencerIsAnIdiot();
         for(int i  = 0 ; i < 100 ; i++){
-            Question t = tmp.getTheQuestion();
+            Question t = tmp.getQuestion();
             System.out.println(t);
         }
 

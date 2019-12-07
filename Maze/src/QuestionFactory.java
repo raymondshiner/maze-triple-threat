@@ -12,18 +12,31 @@ public class QuestionFactory {
     public Question getTheQuestion() throws SQLException {
         // this will return a random question
         Random rand = new Random(System.currentTimeMillis());
-        int toChose;
+
+        int toChoose;
+        int database = rand.nextInt(3);
+
         Connection myCon = connectToDataBase();
         String [] databases = {"MultipleChoice" , "ShortAnswer" , "TrueFalse"};
         int [] questionCounts = {countQuestions(myCon , databases[0]) , countQuestions(myCon , databases[1]) , countQuestions(myCon , databases[2])};
         int numberOfQuestions = questionCounts[0] +  questionCounts[1] + questionCounts[2]; // will be the number of the questions in the database
-        toChose = rand.nextInt(numberOfQuestions +1 );
+        toChoose = rand.nextInt(numberOfQuestions +1 );
         String databaseToGetQuestionFrom = choseTable(databases , questionCounts , numberOfQuestions);
-        toChose = choseNum(questionCounts , toChose);
-        ResultSet results = queryTheDatabase(myCon , toChose , databaseToGetQuestionFrom);
+        toChoose = choseNum(questionCounts , toChoose);
+        ResultSet results = queryTheDatabase(myCon , toChoose , databaseToGetQuestionFrom);
         //results.next();
         // have the question here need to know the constructors for the types of questions and then will add based on the String
         // databaseToGetQuestionsFrom
+        switch(database){
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            default:
+                break;
+        }
         switch(databaseToGetQuestionFrom){
             case "MultipleChoice":
                 String tmp [] = {results.getString("a") , results.getString("b"), results.getString("c") ,results.getString("d")};
@@ -46,6 +59,8 @@ public class QuestionFactory {
             if(total - counts[i] > 0 ){
                 total = total - counts[i];
                // choice++;
+            }else{
+                return total;
             }
         }
         return total;
@@ -57,6 +72,8 @@ public class QuestionFactory {
             if(total - counts[i] > 0 ){
                 total = total - counts[i];
                 choice++;
+            }else{
+                return databases[choice];
             }
         }
         return databases[choice];
