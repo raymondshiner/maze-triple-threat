@@ -1,89 +1,55 @@
-import javax.xml.transform.Result;
 import java.io.File;
 import java.io.IOException;
 import java.sql.*;
 import java.util.Random;
 
-public class QuestionFactory {
+public class QuestionFactory{
     private Question theQuestion;
+    private Connection connection;
     public QuestionFactory(){
-
+        connection = connectToDataBase();
     }
-    public Question getTheQuestion() throws SQLException {
-        // this will return a random question
-        Random rand = new Random(System.currentTimeMillis());
+    public Question getQuestion() throws SQLException {
 
-        int toChoose;
-        int database = rand.nextInt(3);
-
-        Connection myCon = connectToDataBase();
-        String [] databases = {"MultipleChoice" , "ShortAnswer" , "TrueFalse"};
-        int [] questionCounts = {countQuestions(myCon , databases[0]) , countQuestions(myCon , databases[1]) , countQuestions(myCon , databases[2])};
-        int numberOfQuestions = questionCounts[0] +  questionCounts[1] + questionCounts[2]; // will be the number of the questions in the database
-        toChoose = rand.nextInt(numberOfQuestions +1 );
-        String databaseToGetQuestionFrom = choseTable(databases , questionCounts , numberOfQuestions);
-        toChoose = choseNum(questionCounts , toChoose);
-        ResultSet results = queryTheDatabase(myCon , toChoose , databaseToGetQuestionFrom);
-        //results.next();
-        // have the question here need to know the constructors for the types of questions and then will add based on the String
-        // databaseToGetQuestionsFrom
-        switch(database){
+        int choice = getRandom(3);
+        Question q = null;
+        int random;
+        ResultSet results;
+        switch(choice){
             case 0:
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            default:
-                break;
-        }
-        switch(databaseToGetQuestionFrom){
-            case "MultipleChoice":
+                int tmp3 = countQuestions("MultipleChoice");
+                random = getRandom(tmp3);
+                results = queryTheDatabase(random+1 , "MultipleChoice");
                 String tmp [] = {results.getString("a") , results.getString("b"), results.getString("c") ,results.getString("d")};
                 String correct = results.getString("Answer") ;
-                return new MultipleChoice( results.getString("Question"), tmp, correct );
-
-            case "ShortAnswer":
-                return new ShortAnswer(results.getString("Question") , results.getString("Answer") );
-
-            case "TrueFalse":
-                return new TrueFalse(results.getString("field1") , results.getString("field2"));
+                q = new MultipleChoice( results.getString("Question"), tmp, correct );
+                break;
+            case 1:
+                int tmp2 = countQuestions("ShortAnswer");
+                random = getRandom(tmp2);
+                results = queryTheDatabase(random +1  , "ShortAnswer");
+                q = new ShortAnswer(results.getString("Question") , results.getString("Answer") );
+                break;
             default:
+                int tmp1 = countQuestions("TrueFalse");
+                random = getRandom(tmp1);
+                results = queryTheDatabase(random+1 , "TrueFalse");
+                q = new TrueFalse(results.getString("Question") , results.getString("Answer"));
                 break;
         }
-        return null;
-    }
-    private int choseNum(int[] counts , int total){
-       // int choice = 0;
-        for(int i = 0 ; i < counts.length ; i++){
-            if(total - counts[i] > 0 ){
-                total = total - counts[i];
-               // choice++;
-            }else{
-                return total;
-            }
-        }
-        return total;
+        return q;
     }
 
-    private String choseTable(String [] databases , int[] counts , int total ){
-        int choice = 0;
-        for(int i = 0 ; i < counts.length ; i++){
-            if(total - counts[i] > 0 ){
-                total = total - counts[i];
-                choice++;
-            }else{
-                return databases[choice];
-            }
-        }
-        return databases[choice];
+    private int getRandom(int bound){
+        Random r = new Random(System.currentTimeMillis());
+        return r.nextInt(bound);
     }
 
-    private int countQuestions(Connection theDatabase , String whichDatabase){
-        String SQL  = "SELECT * FROM " + whichDatabase;
+    private int countQuestions(String table){
+        String SQL  = "SELECT * FROM " + table;
         int count = 0;
         try{
-            Statement test = theDatabase.createStatement();
+            Statement test = connection.createStatement();
             ResultSet results = test.executeQuery(SQL);
             while(results.next()) {
                 count++;
@@ -96,18 +62,6 @@ public class QuestionFactory {
         return 0;
     }
 
-    private ResultSet queryTheDatabase(Connection theDatabase , int toGet , String table){
-        String sql  = "SELECT * FROM "+table +" WHERE id=" + toGet;
-        try{
-            Statement test = theDatabase.createStatement();
-            ResultSet tmp = test.executeQuery(sql);
-            return tmp;
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
     private Connection connectToDataBase(){
         String initPath;
         File databasePath = null;
@@ -133,6 +87,17 @@ public class QuestionFactory {
         return null;
 
     }
+    private ResultSet queryTheDatabase( int toGet, String table){
+        String sql  = "SELECT * FROM "+table +" WHERE id=" + toGet;
+        try{
+            Statement test = connection.createStatement();
+            ResultSet tmp = test.executeQuery(sql);
+            return tmp;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 }
-

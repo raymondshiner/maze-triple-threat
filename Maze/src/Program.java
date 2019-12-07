@@ -13,7 +13,7 @@ public class Program {
 
     public static void main(String [] args) throws IOException, ClassNotFoundException, SQLException {
         //playGameMenu();
-        SpencerIsAnIdiot tmp = new SpencerIsAnIdiot();
+        QuestionFactory tmp = new QuestionFactory();
         for(int i  = 0 ; i < 100 ; i++){
             Question t = tmp.getQuestion();
             System.out.println(t);
