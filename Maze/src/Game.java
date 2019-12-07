@@ -100,6 +100,14 @@ public class Game {
         }while(!choiceIsValidMove(choice));
 
         theMaze.move(choice);
+        if(!theMaze.canSolve())
+        {
+            System.out.println("\"There is no way out... They are Coming\"");
+            System.out.println("You have locked yourself in the maze");
+            System.out.println("GAME OVER");
+            gameIsOver = true;
+        }
+
         return 0;
     }
 

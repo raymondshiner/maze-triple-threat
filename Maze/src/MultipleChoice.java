@@ -26,6 +26,7 @@ public class MultipleChoice extends Question{
 
         return toCheck.equalsIgnoreCase(this.theCorrectAnswer);
     }
+
     @Override
     public String toString(){
         return super.toString() + "\n" + answerChoices.toString();

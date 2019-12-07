@@ -117,6 +117,7 @@ public class Maze  implements Serializable {
             {
                 System.out.println("Locking " + direction + " Door");
                 lockDoor(door, direction);
+                canSolve();
             }
         }
 
@@ -241,9 +242,34 @@ public class Maze  implements Serializable {
         return canMove;
     }
 
-    private boolean canSolve(){
-        // called after every failed trivia question
-        return false;
+    public boolean canSolve()
+    {
+        return canSolveHelper(playerRow, playerCol, "start");
+    }
+
+    private boolean canSolveHelper(int row, int col, String whereWeCameFrom){
+
+        Room cur = rooms[row][col];
+
+        boolean foundTheExit = false;
+
+        if(cur.isTheExit())
+            foundTheExit = true;
+
+        //east
+        if(!foundTheExit && !whereWeCameFrom.equals("east") && canMovecanSolve(cur.getEastBarrier()))
+            foundTheExit = canSolveHelper(row, col+1, "west");
+
+        if(!foundTheExit && !whereWeCameFrom.equals("west") && canMovecanSolve(cur.getWestBarrier()))
+            foundTheExit = canSolveHelper(row, col-1, "east");
+
+        if(!foundTheExit && !whereWeCameFrom.equals("south") && canMovecanSolve(cur.getSouthBarrier()))
+            foundTheExit = canSolveHelper(row+1, col, "north");
+
+        if(!foundTheExit && !whereWeCameFrom.equals("north") && canMovecanSolve(cur.getNorthBarrier()))
+            foundTheExit = canSolveHelper(row-1, col, "south");
+
+        return foundTheExit;
     }
 
     public void printCurrentRoom()
@@ -271,5 +297,18 @@ public class Maze  implements Serializable {
 
     public Room getCurrentRoom() {
         return currentRoom;
+    }
+
+    private boolean canMovecanSolve(IBarrier barrier)
+    {
+        if(barrier.isAWall())
+            return false;
+
+        Door d = (Door)barrier;
+
+        if(d.isLocked())
+            return false;
+
+        return true;
     }
 }
