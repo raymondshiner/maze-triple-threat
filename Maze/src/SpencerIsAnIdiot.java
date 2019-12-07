@@ -17,21 +17,24 @@ public class SpencerIsAnIdiot {
         ResultSet results;
         switch(choice){
             case 0:
-                random = getRandom(countQuestions("MultipleChoice"));
+                int tmp3 = countQuestions("MultipleChoice");
+                random = getRandom(tmp3);
                 results = queryTheDatabase(random+1 , "MultipleChoice");
                 String tmp [] = {results.getString("a") , results.getString("b"), results.getString("c") ,results.getString("d")};
                 String correct = results.getString("Answer") ;
                 q = new MultipleChoice( results.getString("Question"), tmp, correct );
                 break;
             case 1:
-                random = getRandom(countQuestions("ShortAnswer"));
+                int tmp2 = countQuestions("ShortAnswer");
+                random = getRandom(tmp2);
                 results = queryTheDatabase(random +1  , "ShortAnswer");
                 q = new ShortAnswer(results.getString("Question") , results.getString("Answer") );
                 break;
             default:
-                random = getRandom(countQuestions("TrueFalse"));
+                int tmp1 = countQuestions("TrueFalse");
+                random = getRandom(tmp1);
                 results = queryTheDatabase(random+1 , "TrueFalse");
-                q = new TrueFalse(results.getString("field1") , results.getString("field2"));
+                q = new TrueFalse(results.getString("Question") , results.getString("Answer"));
                 break;
         }
         return q;
@@ -63,7 +66,7 @@ public class SpencerIsAnIdiot {
         String initPath;
         File databasePath = null;
         try{
-            initPath =  ".." +File.separator +  "database" + File.separator+"thisisatest.db" ;
+            initPath =  ".." +File.separator +  "database" + File.separator+"realdb.db" ;
 
             databasePath = new File(initPath);
             // System.out.println(initPath + "\n" + databasePath.getCanonicalPath());
