@@ -10,16 +10,20 @@ public class Program {
     // new
     //exit
     private static Game theGame;
-
+    private static DatabaseAdminTool adminTool;
     public static void main(String [] args) throws IOException, ClassNotFoundException, SQLException {
         //playGameMenu();
-        QuestionFactory tmp = new QuestionFactory();
+        adminTool = new DatabaseAdminTool();
+       /* QuestionFactory tmp = new QuestionFactory();
         for(int i  = 0 ; i < 100 ; i++){
             Question t = tmp.getQuestion();
             System.out.println(t);
         }
 
-
+        */
+       DatabaseAdminTool tmp = new DatabaseAdminTool();
+       Scanner input = new Scanner(System.in);
+       tmp.addQuestion(input);
 
 
         /*
@@ -60,7 +64,8 @@ public class Program {
             
             System.out.println("1 Would you like to start a new game ? ");
             System.out.println("2 Would you like load a previous game ?");
-            System.out.println("3 quit ");
+            System.out.println("3 Add a question");
+            System.out.println("4 quit ");
 
             choice = input.nextLine();
             if(choice.equals("1")){
@@ -73,6 +78,9 @@ public class Program {
                 done = false;
             }else if(choice.equalsIgnoreCase("3")){
                 // exit while loop so that the program will stop
+                adminTool.addQuestion(input);
+                done = false;
+            }else if(choice.equalsIgnoreCase("4")){
                 done = true;
             }else if (choice.equalsIgnoreCase("2")){
                 // load game

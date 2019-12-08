@@ -99,5 +99,14 @@ public class QuestionFactory{
         }
         return null;
     }
+    public void closeDatabase(){
+        try{
+            connection.close();
+        }catch(SQLException e ){
+
+        }
+
+    }
+
 
 }
