@@ -1,18 +1,23 @@
 import java.io.Serializable;
 
 public class Player implements Serializable {
-    private static Player thePlayer;
+
+    private String name;
 
     public Player(){
-
-    }
-    public static Player getPlayer(){
-        // use of singleton to return the player
-        if(thePlayer == null){
-            return new Player();
-        }else{
-            return thePlayer;
-        }
+        this.name = "NO NAME";
     }
 
+    public void setName(String name)
+    {
+        if(name == null || name.isEmpty())
+            throw new IllegalArgumentException("Player.setName - name cannot be empty or null");
+
+        this.name = name;
+    }
+
+    public String getName()
+    {
+        return this.name;
+    }
 }

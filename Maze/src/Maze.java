@@ -3,25 +3,21 @@ import java.util.Scanner;
 
 public class Maze  implements Serializable {
     private Room [][] rooms;
-    private Player player;
     private int playerRow;
     private int playerCol;
     private Room currentRoom;
+    private Player thePlayer;
 
-    public Maze(Player thePlayer, int row, int col){
-
-        if(thePlayer == null)
-            throw new IllegalArgumentException("Maze Constructor player is null");
+    public Maze(int row, int col){
 
         if(row < 1 || col < 1)
             throw new IllegalArgumentException("Maze Constructor can't have <1 length or depth");
 
-        buildMaze (thePlayer, row, col);
+        buildMaze (row, col);
     }
 
-    private void buildMaze(Player thePlayer, int row, int col){
+    private void buildMaze(int row, int col){
         rooms = new Room[row][col];
-        player = thePlayer;
         playerRow = 0;
         playerCol = 0;
 
@@ -310,5 +306,13 @@ public class Maze  implements Serializable {
             return false;
 
         return true;
+    }
+
+    public void setPlayer(Player thePlayer) {
+        this.thePlayer = thePlayer;
+    }
+
+    public Player getPlayer() {
+        return thePlayer;
     }
 }

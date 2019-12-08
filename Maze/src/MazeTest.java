@@ -15,7 +15,7 @@ class MazeTest {
     public void constructor_NullPlayerParamter_throwsIllegalArgumentException()
     {
         assertThrows(IllegalArgumentException.class, () -> {
-            Maze maze = new Maze(null, 1, 1);
+            Maze maze = new Maze(1, 1);
         });
     }
 
@@ -23,7 +23,7 @@ class MazeTest {
 
     @Test
     public void displayMaze_InstatiateObject_ReturnsExpectedOutput(){
-        Maze maze = new Maze(new Player(), 1, 1);
+        Maze maze = new Maze(1, 1);
         String expected = "P: Player\nE: Exit\n" +
                         "***********\n" +
                         "*P| | | | *\n" +

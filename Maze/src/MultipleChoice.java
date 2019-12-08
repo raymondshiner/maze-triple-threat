@@ -6,32 +6,22 @@ import java.sql.*;
 public class MultipleChoice extends Question{
     private Choices answerChoices;
 
-    private String theCorrectAnswer;
 
     public MultipleChoice() {
         super();
     }
 
     public MultipleChoice(String question , String [] choices , String answer){
-        super(question);
+        super(question, answer);
         answerChoices = new Choices(choices[0], choices[1], choices[2], choices[3]);
-        theCorrectAnswer = answer;
     }
 
-    @Override
-    public boolean checkAnswer(String toCheck) {
-
-        if(super.checkAnswer(toCheck))
-            return true;
-
-        return toCheck.equalsIgnoreCase(this.theCorrectAnswer);
-    }
 
     @Override
     public String toString(){
         return super.toString() + "\n" + answerChoices.toString();
     }
-    private class Choices{
+    private class Choices implements Serializable{
         private String choiceA, choiceB, choiceC, choiceD;
         // this will have to be random or the correct answer will always be A
         // but do not currently care because it works and will work for deployment
@@ -68,7 +58,7 @@ public class MultipleChoice extends Question{
 
         @Override
         public String toString(){
-            return getChoiceA() + "\n" + getChoiceB() + "\n" + getChoiceC() + "\n" + getChoiceD() + "\n";
+            return "a - " + getChoiceA() + "\n" + "b - " + getChoiceB() + "\n" + "c - " + getChoiceC() + "\n" + "d - " +getChoiceD() + "\n";
         }
     }
 }
