@@ -7,7 +7,7 @@ import java.io.*;
 import java.util.Scanner;
 
 public class Game {
-    // will handle the game menue
+    // will handle the game menus
     // moving and stuff like that
     private Maze theMaze;
     private boolean gameIsSaved;
@@ -43,7 +43,7 @@ public class Game {
         // this may be incorrect
         // is it possible for the game to be over and then be saved if no then no changes nessessary
         this.theMaze = savedGame;
-        System.out.println("Starting saved game here is where you left off ");
+        System.out.println("Starting saved game, here is where you left off:");
         System.out.println(theMaze.getMazeLayout());
     }
 
@@ -59,8 +59,7 @@ public class Game {
 
         do {
 
-            if(theMaze.getCurrentRoom().isTheExit())
-            {
+            if(theMaze.getCurrentRoom().isTheExit()) {
                 System.out.println("You Found the Exit! Congratulations!");
                 System.out.println();
                 System.out.println("CREDITS:");
@@ -87,8 +86,7 @@ public class Game {
 
 
 
-            if(choiceIsSave)
-            {
+            if(choiceIsSave) {
                 System.out.println("Saving Game");
                 FileOutputStream file = new FileOutputStream("test.bin");
                 ObjectOutputStream tmp = new ObjectOutputStream(file);
@@ -98,24 +96,21 @@ public class Game {
                 gameIsSaved = true;
             }
 
-            else if(choiceIsQuit)
-            {
+            else if(choiceIsQuit) {
                 if(userWantsToQuit(input)){
                     this.gameIsOver = true;
                     return -1;
                 }
             }
 
-            else if(!choiceIsValidMove(choice))
-            {
+            else if(!choiceIsValidMove(choice)) {
                 System.out.println("ERROR - Please enter valid choice");
             }
 
         }while(!choiceIsValidMove(choice));
 
         theMaze.move(choice);
-        if(!theMaze.canSolve())
-        {
+        if(!theMaze.canSolve()){
             System.out.println("\"There is no way out... They are Coming\"");
             System.out.println("You have locked yourself in the maze");
             System.out.println("GAME OVER");
@@ -145,18 +140,20 @@ public class Game {
 
 
     }
+
     private void printSaves(){
-        System.out.println("here are your saves to choose from ");
+        System.out.println("Here are your saves to choose from ");
         for(int i = 0 ; i < saves.length ; i++){
-            System.out.println(i +": " +saves[i]);
+            System.out.println(i +": " + saves[i]);
         }
-        System.out.println("please choose the number that you would like to save your game to");
+        System.out.println("Please choose the number that you would like to save your game to");
     }
 
     private boolean userWantsToQuit(Scanner input){
         boolean tryAgain;
         if(!gameIsSaved){
-            System.out.println("does the user really want to quit without saving y/n");
+            String q = "Does the user really want to quit without saving? y/n - ";
+            System.out.println(q);
             String choice = input.nextLine();
             do{
 
@@ -165,8 +162,8 @@ public class Game {
                 }else if(choice.equalsIgnoreCase("n")){
                     return false;
                 }
-                System.out.println("invalid input try again");
-                System.out.println("does the user really want to quit without saving y/n");
+                System.out.println("Invalid input, please try again");
+                System.out.println(q);
                 choice = input.nextLine();
                 tryAgain = true;
             }while(tryAgain);

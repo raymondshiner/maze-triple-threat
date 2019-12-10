@@ -11,21 +11,21 @@ import java.sql.*;
 import java.util.Random;
 
 public class QuestionFactory{
-    private Question theQuestion;
     private Connection connection;
-
     private Random r;
+
     public QuestionFactory(){
         connection = connectToDataBase();
         r = new Random(System.currentTimeMillis());
     }
+
     public Question getQuestion() throws SQLException {
 
         int choice = getRandom(3);
-        Question q = null;
+        Question q;
         int random;
         ResultSet results;
-        String answer = null;
+
         switch(choice){
             case 0:
                 int tmp3 = countQuestions("MultipleChoice");
@@ -61,7 +61,7 @@ public class QuestionFactory{
         try{
             Statement test = connection.createStatement();
             ResultSet results = test.executeQuery(SQL);
-            while(results.next()) {
+            while(results.next()){
                 count++;
             }
             results.close();
@@ -86,6 +86,7 @@ public class QuestionFactory{
         Connection myCon;
         String USR = "root";
         String password ="thisisastupidpassword";
+
         try{
             Class.forName("org.sqlite.JDBC");
             myCon = DriverManager.getConnection("jdbc:sqlite:" +databasePath.getCanonicalPath(),USR ,password);
@@ -103,7 +104,6 @@ public class QuestionFactory{
             Statement test = connection.createStatement();
             ResultSet tmp = test.executeQuery(sql);
             return tmp;
-
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -42,8 +42,7 @@ public class Room implements Serializable {
     public int getColLocation() {return colLocation;}
 
 
-    public void displayRoom()
-    {
+    public void displayRoom(){
         String up = "North - " + constructBarrierString(northBarrier);
         String left = "West - " + constructBarrierString(westBarrier);
         String right = "East - " + constructBarrierString(eastBarrier);

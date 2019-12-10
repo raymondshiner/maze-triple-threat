@@ -15,7 +15,6 @@ public class Maze  implements Serializable {
     private Player thePlayer;
 
     public Maze(int row, int col){
-
         if(row < 1 || col < 1)
             throw new IllegalArgumentException("Maze Constructor can't have <1 length or depth");
 
@@ -33,28 +32,27 @@ public class Maze  implements Serializable {
         playerCol = 0;
 
         QuestionFactory factory = new QuestionFactory();
-
+      
         for(int x = 0; x < row; x++)
         {
             for(int y = 0; y<col; y++)
             {
                 Room room = new Room(x, y); //Room by default is all doors
 
+
                 Door north = (Door)room.getNorthBarrier();
                 Door south = (Door)room.getSouthBarrier();
                 Door east = (Door)room.getEastBarrier();
                 Door west = (Door)room.getWestBarrier();
 
-                try
-                {
+                try {
                     north.setQuestion(factory.getQuestion());
                     south.setQuestion(factory.getQuestion());
                     east.setQuestion(factory.getQuestion());
                     west.setQuestion(factory.getQuestion());
                 }
 
-                catch(Exception e)
-                {
+                catch(Exception e) {
                     System.out.println("Something went Wrong");
                 }
 
@@ -78,16 +76,15 @@ public class Maze  implements Serializable {
         currentRoom = rooms[playerRow][playerCol];
 
         rooms[row-1][col-1].makeExit();
+        factory.closeDatabase();
     }
 
-    public boolean move(String direction)
-    {
+    public boolean move(String direction) {
         direction = direction.toLowerCase().trim();
 
         IBarrier barrier;
 
-        switch(direction)
-        {
+        switch(direction) {
             case "north":
                 barrier = currentRoom.getNorthBarrier();
                 break;
@@ -104,24 +101,20 @@ public class Maze  implements Serializable {
                 throw new IllegalArgumentException("Only Move North South East West");
         }
 
-        if(canMoveThroughBarrier(barrier))
-        {
+        if(canMoveThroughBarrier(barrier)) {
             Door door = (Door)barrier;
 
-            if(door.isOpen())
-            {
+            if(door.isOpen()) {
                 movePlayerOneSpace(direction);
                 return true;
             }
 
-            if(answersDoorQuestionCorrectly(door))
-            {
+            if(answersDoorQuestionCorrectly(door)) {
                 movePlayerOneSpace(direction);
                 return true;
             }
 
-            else
-            {
+            else {
                 System.out.println("Locking " + direction + " Door");
                 lockCurrentRoomsDoor(direction);
                 canSolve();
@@ -145,14 +138,12 @@ public class Maze  implements Serializable {
 
         boolean rightAnswer = q.checkAnswer(userAnswer);
 
-        if(rightAnswer)
-        {
+        if(rightAnswer) {
             System.out.println("Correct!");
             return true;
         }
 
-        else
-        {
+        else {
             System.out.println("Sorry, the correct answer was - " + q.getAnswer());
             return false;
         }
@@ -163,8 +154,7 @@ public class Maze  implements Serializable {
         Door door = new Door();
         Door otherSide = new Door();
 
-        switch(direction)
-        {
+        switch(direction){
             case "north":
                 door = (Door)currentRoom.getNorthBarrier();
                 otherSide = (Door)rooms[playerRow - 1][playerCol].getSouthBarrier();
@@ -189,13 +179,12 @@ public class Maze  implements Serializable {
 
     public void movePlayerOneSpace(String direction) {
 
-        System.out.println("You Walk through the " + direction + " door");
+        System.out.println("You walk through the " + direction + " door");
 
         Door door;
         Door otherSideOfDoor;
 
-        switch(direction)
-        {
+        switch(direction){
             case "north":
                 door = (Door)currentRoom.getNorthBarrier();
                 playerRow--;
@@ -230,18 +219,15 @@ public class Maze  implements Serializable {
     {
         boolean canMove = true;
 
-        if(barrier.isAWall())
-        {
+        if(barrier.isAWall()){
             System.out.println("You tried walking into a wall - nice move");
             canMove = false;
         }
 
-        else
-        {
+        else{
             Door door = (Door)barrier;
 
-            if(door.isLocked())
-            {
+            if(door.isLocked()){
                 System.out.println("That door is locked");
                 canMove = false;
             }
