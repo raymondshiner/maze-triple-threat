@@ -1,8 +1,14 @@
+package maze;
+
+import game.Player;
+import maze.barrier.*;
+import questions.*;
+
 import java.io.Serializable;
 import java.util.Scanner;
 
 public class Maze  implements Serializable {
-    private Room [][] rooms;
+    private Room[][] rooms;
     private int playerRow;
     private int playerCol;
     private Room currentRoom;

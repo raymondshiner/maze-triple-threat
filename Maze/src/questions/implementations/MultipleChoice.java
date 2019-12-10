@@ -1,9 +1,10 @@
-import java.io.File;
-import java.io.IOException;
-import java.io.Serializable;
-import java.sql.*;
+package questions.implementations;
 
-public class MultipleChoice extends Question{
+import questions.Question;
+
+import java.io.Serializable;
+
+public class MultipleChoice extends Question {
     private Choices answerChoices;
 
 

@@ -1,3 +1,10 @@
+package questions;
+
+import questions.implementations.MultipleChoice;
+import questions.Question;
+import questions.implementations.ShortAnswer;
+import questions.implementations.TrueFalse;
+
 import java.io.File;
 import java.io.IOException;
 import java.sql.*;
