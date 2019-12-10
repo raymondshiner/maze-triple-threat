@@ -14,7 +14,7 @@ public class Program {
     private static Game theGame;
     private static DatabaseAdminTool adminTool;
     public static void main(String [] args) throws IOException, ClassNotFoundException, SQLException {
-        adminTool = new DatabaseAdminTool();
+
         playGameMenu();
        
     }
@@ -64,8 +64,9 @@ public class Program {
                     break;
 
                 case "3": //add Question
-
+                    adminTool = new DatabaseAdminTool();
                     adminTool.addQuestion(input);
+                    adminTool.closeDatabse();
                     break;
 
                 case "4": //quit
