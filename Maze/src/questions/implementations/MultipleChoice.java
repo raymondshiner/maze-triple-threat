@@ -7,21 +7,16 @@ import java.io.Serializable;
 public class MultipleChoice extends Question {
     private Choices answerChoices;
 
-
-    public MultipleChoice() {
-        super();
-    }
-
     public MultipleChoice(String question , String [] choices , String answer){
         super(question, answer);
         answerChoices = new Choices(choices[0], choices[1], choices[2], choices[3]);
     }
 
-
     @Override
     public String toString(){
         return super.toString() + "\n" + answerChoices.toString();
     }
+
     private class Choices implements Serializable{
         private String choiceA, choiceB, choiceC, choiceD;
         // this will have to be random or the correct answer will always be A
