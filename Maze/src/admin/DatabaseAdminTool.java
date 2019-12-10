@@ -12,6 +12,7 @@ public class DatabaseAdminTool {
         theConnection = connectToDataBase();
     }
     public boolean addQuestion(Scanner input ){
+
         try{
             // returns true if a question was added false if not
             System.out.println("what type of question would you like to add to the database");
@@ -31,8 +32,11 @@ public class DatabaseAdminTool {
                     System.out.println("Please enter the answer TRUE or FALSE");
                     answer = input.nextLine();
                     //INSERT INTO "TrueFalse" VALUES ('Albus Dumbledore''s full name is Albus Percival Wulfric Brian Dumbledore','TRUE');
-                    sqlStatement = "INSERT INTO \"TrueFalse\" VALUES (\"" + theQuestion + "\",\"" + answer + "\",?)";
-                    addQuestionToDatabase(sqlStatement);
+                    sqlStatement = "INSERT INTO \"TrueFalse\" VALUES (\"" +preventSQLInjection( theQuestion) + "\",\"" + preventSQLInjection(answer) + "\",?)";
+                    System.out.println(sqlStatement);
+                    if (addQuestionToDatabase(sqlStatement)){
+                        return false;
+                    }
                     break;
                 case 2:
                     //INSERT INTO "ShortAnswer" VALUES ('Who creates the slug club?','Slughorn');
@@ -42,8 +46,11 @@ public class DatabaseAdminTool {
                     System.out.println("Please enter the answer");
                     answer = input.nextLine();
                     // add a short answer
-                    sqlStatement = "INSERT INTO \"ShortAnswer\" VALUES (\"" + theQuestion + "\",\"" + answer + "\",?)";
-                    addQuestionToDatabase(sqlStatement);
+                    sqlStatement = "INSERT INTO \"ShortAnswer\" VALUES (\"" + preventSQLInjection(theQuestion) + "\",\"" + preventSQLInjection(answer) + "\",?)";
+                    System.out.println(sqlStatement);
+                    if (addQuestionToDatabase(sqlStatement)){
+                        return false;
+                    }
                     break;
                 case 3:
                     //INSERT INTO "MultipleChoice" VALUES ('Who kills Cedric Diggory on Lord Voldemort''s orders?','c','Draco Malfoy','Severus Snape','Peter Pettigrew','Sirius Black');
@@ -58,8 +65,10 @@ public class DatabaseAdminTool {
                     System.out.println("please say which is the correct one by number entered ");
                     String correctAnswer = input.next();
                     // add a multiple choice
-                    sqlStatement = "INSERT INTO \"MultipleChoice\" VALUES (\"" + theQuestion + "\",\"" + correctAnswer + "\",\"" + answers[0] + "\",\"" + answers[1] +"\",\"" + answers[2] +"\",\"" + answers[3]+ "\",?)";
-                    addQuestionToDatabase(sqlStatement);
+                    sqlStatement = "INSERT INTO \"MultipleChoice\" VALUES (\"" + preventSQLInjection(theQuestion )+ "\",\"" + preventSQLInjection(correctAnswer) + "\",\"" + preventSQLInjection(answers[0]) + "\",\"" + preventSQLInjection(answers[1]) +"\",\"" + preventSQLInjection(answers[2]) +"\",\"" + preventSQLInjection(answers[3])+ "\",?)";
+                    if (addQuestionToDatabase(sqlStatement)){
+                        return false;
+                    }
                     break;
                 default:
                     System.out.println("invalid choice prompting again");
@@ -90,10 +99,10 @@ public class DatabaseAdminTool {
             test.executeUpdate(sql);
             return true;
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("I solemnly swear i'm upto no good won't help you here. \n Even cheats wont let you sql inject this code ");
+            return false;
         }
-        return false;
     }
 
     private Connection connectToDataBase(){
@@ -127,6 +136,17 @@ public class DatabaseAdminTool {
         }
 
     }
-
+    public String preventSQLInjection(String str) {
+        String data = null;
+        if (str != null && str.length() > 0) {
+            str = str.replace("\\", "\\\\");
+            str = str.replace("'", "\\'");
+            str = str.replace("\"", "\\\"");
+            str = str.replace("\\x1a", "\\Z");
+            data = str;
+        }
+        return data;
+    }
 
 }
+
