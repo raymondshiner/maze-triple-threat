@@ -13,8 +13,7 @@ public class Room implements Serializable {
     private IBarrier westBarrier;
     private boolean isTheExit;
 
-    public Room()
-    {
+    public Room() {
         northBarrier = new Door();
         southBarrier = new Door();
         eastBarrier = new Door();
@@ -33,8 +32,7 @@ public class Room implements Serializable {
     public IBarrier getWestBarrier() { return westBarrier; }
 
 
-    public void displayRoom()
-    {
+    public void displayRoom(){
         String up = "North - " + constructBarrierString(northBarrier);
         String left = "West - " + constructBarrierString(westBarrier);
         String right = "East - " + constructBarrierString(eastBarrier);

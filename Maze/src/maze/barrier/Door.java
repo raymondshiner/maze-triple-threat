@@ -9,7 +9,6 @@ public class Door implements IBarrier, Serializable {
     private Question question;
 
     public Door(){
-
         this.isLocked = false;
         this.isOpen = false;
         //to start doors are always closed but not isLocked yet
@@ -22,7 +21,6 @@ public class Door implements IBarrier, Serializable {
     }
 
     public void setQuestion(Question question) {
-
         if(question == null)
             throw new IllegalArgumentException("set Door Question is null");
 
