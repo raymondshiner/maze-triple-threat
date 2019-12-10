@@ -73,6 +73,7 @@ public class Maze  implements Serializable {
         currentRoom = rooms[playerRow][playerCol];
 
         rooms[row-1][col-1].makeExit();
+        factory.closeDatabase();
     }
 
     public boolean move(String direction)
