@@ -6,50 +6,13 @@ import java.util.Scanner;
 
 public class Program {
     // this will handle everything before the game starts
-    // load
-    // new
-    //exit
+   
     private static Game theGame;
     private static DatabaseAdminTool adminTool;
     public static void main(String [] args) throws IOException, ClassNotFoundException, SQLException {
-        //playGameMenu();
         adminTool = new DatabaseAdminTool();
-       /* QuestionFactory tmp = new QuestionFactory();
-        for(int i  = 0 ; i < 100 ; i++){
-            Question t = tmp.getQuestion();
-            System.out.println(t);
-        }
-
-        */
-       DatabaseAdminTool tmp = new DatabaseAdminTool();
-       Scanner input = new Scanner(System.in);
-       tmp.addQuestion(input);
-
-
-        /*
-        //MultipleChoice tmp = new MultipleChoice();
-
-        Door up = new Door();
-        up.lock();
-
-        Door down = new Door();
-        down.open();
-
-        Wall left = new Wall();
-        Door right = new Door();
-
-        Room room = new Room();
-
-        room.setNorthBarrier(up);
-        room.setEastBarrier(right);
-        room.setWestBarrier(left);
-        room.setSouthBarrier(down);
-
-        room.displayRoom();
-        //System.out.println("Hello World!");
-        //did this work
         playGameMenu();
-        */
+       
     }
     public static void playGameMenu() throws IOException, ClassNotFoundException {
         Scanner input = new Scanner(System.in);

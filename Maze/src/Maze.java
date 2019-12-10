@@ -1,34 +1,52 @@
 import java.io.Serializable;
+import java.util.Scanner;
 
 public class Maze  implements Serializable {
     private Room [][] rooms;
-    private Player player;
     private int playerRow;
     private int playerCol;
     private Room currentRoom;
+    private Player thePlayer;
 
-    public Maze(Player thePlayer, int row, int col){
-
-        if(thePlayer == null)
-            throw new IllegalArgumentException("Maze Constructor player is null");
+    public Maze(int row, int col){
 
         if(row < 1 || col < 1)
             throw new IllegalArgumentException("Maze Constructor can't have <1 length or depth");
 
-        buildMaze (thePlayer, row, col);
+        buildMaze (row, col);
     }
 
-    private void buildMaze(Player thePlayer, int row, int col){
+    private void buildMaze(int row, int col){
         rooms = new Room[row][col];
-        player = thePlayer;
         playerRow = 0;
         playerCol = 0;
+
+        QuestionFactory factory = new QuestionFactory();
 
         for(int x = 0; x < row; x++)
         {
             for(int y = 0; y<col; y++)
             {
                 Room room = new Room(); //Room by default is all doors
+
+                Door north = (Door)room.getNorthBarrier();
+                Door south = (Door)room.getSouthBarrier();
+                Door east = (Door)room.getEastBarrier();
+                Door west = (Door)room.getWestBarrier();
+
+                try
+                {
+                    north.setQuestion(factory.getQuestion());
+                    south.setQuestion(factory.getQuestion());
+                    east.setQuestion(factory.getQuestion());
+                    west.setQuestion(factory.getQuestion());
+                }
+
+                catch(Exception e)
+                {
+                    System.out.println("Something went Wrong");
+                }
+
 
                 if(x == 0) //first row of maze
                     room.setNorthBarrier(new Wall());
@@ -77,12 +95,84 @@ public class Maze  implements Serializable {
 
         if(canMoveThroughBarrier(barrier))
         {
-            movePlayerOneSpace(direction);
-            return true;
+            Door door = (Door)barrier;
+
+            if(door.isOpen())
+            {
+                movePlayerOneSpace(direction);
+                return true;
+            }
+
+            if(answersDoorQuestionCorrectly(door))
+            {
+                movePlayerOneSpace(direction);
+                return true;
+            }
+
+            else
+            {
+                System.out.println("Locking " + direction + " Door");
+                lockDoor(door, direction);
+                canSolve();
+            }
         }
 
         System.out.println();
         return  false;
+    }
+
+    private boolean answersDoorQuestionCorrectly(Door door)
+    {
+        Question q = door.getQuestion();
+        System.out.println();
+        Scanner kb = new Scanner(System.in);
+
+        System.out.println(q);
+        System.out.print("Answer --> ");
+        String userAnswer = kb.nextLine();
+        userAnswer = userAnswer.trim().toLowerCase();
+
+        boolean rightAnswer = q.checkAnswer(userAnswer);
+
+        if(rightAnswer)
+        {
+            System.out.println("Correct!");
+            return true;
+        }
+
+        else
+        {
+            System.out.println("Sorry, the correct answer was - " + q.getAnswer());
+            return false;
+        }
+    }
+
+    private void lockDoor(Door door, String direction)
+    {
+        Door otherSide = new Door();
+
+        switch(direction)
+        {
+            case "north":
+                door = (Door)currentRoom.getNorthBarrier();
+                otherSide = (Door)rooms[playerRow - 1][playerCol].getSouthBarrier();
+                break;
+            case "south":
+                door = (Door)currentRoom.getSouthBarrier();
+                otherSide = (Door)rooms[playerRow + 1][playerCol].getNorthBarrier();
+                break;
+            case "east":
+                door = (Door)currentRoom.getEastBarrier();
+                otherSide = (Door)rooms[playerRow][playerCol + 1].getWestBarrier();
+                break;
+            case "west":
+                door = (Door)currentRoom.getWestBarrier();
+                otherSide = (Door)rooms[playerRow][playerCol - 1].getEastBarrier();
+                break;
+        }
+
+        otherSide.lock();
+        door.lock();
     }
 
     private void movePlayerOneSpace(String direction) {
@@ -148,9 +238,34 @@ public class Maze  implements Serializable {
         return canMove;
     }
 
-    private boolean canSolve(){
-        // called after every failed trivia question
-        return false;
+    public boolean canSolve()
+    {
+        return canSolveHelper(playerRow, playerCol, "start");
+    }
+
+    private boolean canSolveHelper(int row, int col, String whereWeCameFrom){
+
+        Room cur = rooms[row][col];
+
+        boolean foundTheExit = false;
+
+        if(cur.isTheExit())
+            foundTheExit = true;
+
+        //east
+        if(!foundTheExit && !whereWeCameFrom.equals("east") && canMovecanSolve(cur.getEastBarrier()))
+            foundTheExit = canSolveHelper(row, col+1, "west");
+
+        if(!foundTheExit && !whereWeCameFrom.equals("west") && canMovecanSolve(cur.getWestBarrier()))
+            foundTheExit = canSolveHelper(row, col-1, "east");
+
+        if(!foundTheExit && !whereWeCameFrom.equals("south") && canMovecanSolve(cur.getSouthBarrier()))
+            foundTheExit = canSolveHelper(row+1, col, "north");
+
+        if(!foundTheExit && !whereWeCameFrom.equals("north") && canMovecanSolve(cur.getNorthBarrier()))
+            foundTheExit = canSolveHelper(row-1, col, "south");
+
+        return foundTheExit;
     }
 
     public void printCurrentRoom()
@@ -166,17 +281,38 @@ public class Maze  implements Serializable {
     public String getMazeLayout(){
         String s = "P: Player\nE: Exit\n";
         return(s +  "***********\n" +
-                    "*P| | | | *\n" +
-                    "*-*-*-*-*-*\n" +
-                    "* | | | | *\n" +
-                    "*-*-*-*-*-*\n" +
-                    "* | | | | *\n" +
-                    "*-*-*-*-*-*\n" +
-                    "* | | | |E|\n" +
-                    "***********\n");
+                "*P| | | | *\n" +
+                "*-*-*-*-*-*\n" +
+                "* | | | | *\n" +
+                "*-*-*-*-*-*\n" +
+                "* | | | | *\n" +
+                "*-*-*-*-*-*\n" +
+                "* | | | |E|\n" +
+                "***********\n");
     }
 
     public Room getCurrentRoom() {
         return currentRoom;
+    }
+
+    private boolean canMovecanSolve(IBarrier barrier)
+    {
+        if(barrier.isAWall())
+            return false;
+
+        Door d = (Door)barrier;
+
+        if(d.isLocked())
+            return false;
+
+        return true;
+    }
+
+    public void setPlayer(Player thePlayer) {
+        this.thePlayer = thePlayer;
+    }
+
+    public Player getPlayer() {
+        return thePlayer;
     }
 }

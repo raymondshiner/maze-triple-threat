@@ -6,8 +6,11 @@ import java.util.Random;
 public class QuestionFactory{
     private Question theQuestion;
     private Connection connection;
+
+    private Random r;
     public QuestionFactory(){
         connection = connectToDataBase();
+        r = new Random(System.currentTimeMillis());
     }
     public Question getQuestion() throws SQLException {
 
@@ -15,6 +18,7 @@ public class QuestionFactory{
         Question q = null;
         int random;
         ResultSet results;
+        String answer = null;
         switch(choice){
             case 0:
                 int tmp3 = countQuestions("MultipleChoice");
@@ -41,7 +45,6 @@ public class QuestionFactory{
     }
 
     private int getRandom(int bound){
-        Random r = new Random(System.currentTimeMillis());
         return r.nextInt(bound);
     }
 

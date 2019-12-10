@@ -12,7 +12,17 @@ public class Game {
     public Game() throws IOException {
         // names of the save files more can be added for release
         this.saves = new String[] {"save1", "save2", "save2"};
-        theMaze = new Maze(new Player(), 5, 5);
+        Scanner kb = new Scanner(System.in);
+        System.out.println("Please enter your name");
+
+
+        String playerName = kb.nextLine();
+        Player thePlayer = new Player();
+        thePlayer.setName(playerName);
+
+        theMaze = new Maze(5, 5);
+        theMaze.setPlayer(thePlayer);
+
         gameIsSaved = false;
         gameIsOver =false;
         System.out.println();
@@ -64,7 +74,7 @@ public class Game {
 
             theMaze.printCurrentRoom();
 
-            System.out.println("Please make a move (north, south, east, west, quit, save):");
+            System.out.println(theMaze.getPlayer().getName() + " - Please make a move (north, south, east, west, quit, save):");
             System.out.print("Choice --> ");
             choice = input.nextLine();
 
@@ -81,7 +91,7 @@ public class Game {
                 tmp.writeObject(theMaze);
                 tmp.close();
                 file.close();
-                gameIsSaved = true; 
+                gameIsSaved = true;
             }
 
             else if(choiceIsQuit)
@@ -100,6 +110,14 @@ public class Game {
         }while(!choiceIsValidMove(choice));
 
         theMaze.move(choice);
+        if(!theMaze.canSolve())
+        {
+            System.out.println("\"There is no way out... They are Coming\"");
+            System.out.println("You have locked yourself in the maze");
+            System.out.println("GAME OVER");
+            gameIsOver = true;
+        }
+
         return 0;
     }
 
