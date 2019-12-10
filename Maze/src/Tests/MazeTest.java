@@ -1,3 +1,6 @@
+package Tests;
+
+import maze.Maze;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,16 +13,6 @@ class MazeTest {
     public void thisIsATestTest(){
         assertEquals(1,1);
     }
-
-    @Test
-    public void constructor_NullPlayerParamter_throwsIllegalArgumentException()
-    {
-        assertThrows(IllegalArgumentException.class, () -> {
-            Maze maze = new Maze(1, 1);
-        });
-    }
-
-
 
     @Test
     public void displayMaze_InstatiateObject_ReturnsExpectedOutput(){

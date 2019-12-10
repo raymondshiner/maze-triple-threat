@@ -1,3 +1,8 @@
+package maze;
+
+import maze.barrier.Door;
+import maze.barrier.IBarrier;
+
 import java.io.Serializable;
 
 public class Room implements Serializable {

@@ -1,5 +1,9 @@
+package game;
+
+import maze.Maze;
+import game.Player;
+
 import java.io.*;
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Game {
@@ -48,7 +52,7 @@ public class Game {
     }
 
 
-    public int moveMenu() throws IOException {
+    public int movePlayer() throws IOException {
 
         Scanner input = new Scanner(System.in);
         String choice;

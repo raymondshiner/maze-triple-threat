@@ -1,3 +1,7 @@
+package questions.implementations;
+
+import questions.Question;
+
 public class TrueFalse extends Question {
     private String theAnswer;
     public TrueFalse(String theQuestion , String answer) {
