@@ -132,7 +132,7 @@ public class Maze  implements Serializable {
         return  false;
     }
 
-    private boolean answersDoorQuestionCorrectly(Door door)
+    public boolean answersDoorQuestionCorrectly(Door door)
     {
         Question q = door.getQuestion();
         System.out.println();

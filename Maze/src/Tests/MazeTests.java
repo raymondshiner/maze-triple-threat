@@ -11,8 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class MazeTests {
     public MazeTests() {    }
 
-
-
     @ParameterizedTest
     @CsvSource({"-1,1", "1,-1", "0,1", "1,0"})
     public void mazeExplicitConstructor_BadParameters_ThrowsIllegalArgumentException(int rows, int cols)
@@ -20,6 +18,18 @@ class MazeTests {
         assertThrows(IllegalArgumentException.class, () -> {
             Maze maze = new Maze(rows, cols);
         });
+    }
+
+    @Test
+    public void defaultMazeConstructor_5by5Maze_BottomRightRoomPositionIs4And4()
+    {
+        Maze maze = new Maze();
+
+        Room room = getLastRoom(maze);
+
+        boolean lastRoomInRightPlace = room.getRowLocation() == 4 && room.getColLocation() == 4;
+
+        assertEquals(lastRoomInRightPlace, true);
     }
 
     //buildMaze tested via constructor
@@ -49,20 +59,28 @@ class MazeTests {
     }
 
     @Test
-    public void defaultMazeConstructor_5by5Maze_BottomRightRoomPositionIs4And4()
+    public void buildMaze_ExplicitConstructor3by5_BottomRightRoomPositionIs2And4()
     {
-        Maze maze = new Maze();
+        Maze maze = new Maze(3,5);
+        Room room = getLastRoom(maze);
 
-        while(!maze.getCurrentRoom().getEastBarrier().isAWall())
-            maze.movePlayerOneSpace("east");
+        boolean correctRoom = (room.getRowLocation() == 2) && (room.getColLocation() == 4);
 
-        while(!maze.getCurrentRoom().getSouthBarrier().isAWall())
-            maze.movePlayerOneSpace("south");
+        assertEquals(correctRoom, true);
+    }
 
-        Room room = maze.getCurrentRoom();
-        boolean lastRoomInRightPlace = room.getRowLocation() == 4 && room.getColLocation() == 4;
+    @Test
+    public void buildMaze_ExplicitConstructor3by5_BottomRightRoomIsExit()
+    {
+        Maze maze = new Maze(3,5);
+        Room room = getLastRoom(maze);
+        assertEquals(room.isTheExit(), true);
+    }
 
-        assertEquals(lastRoomInRightPlace, true);
+    @Test
+    public void answerDoorQuestionCorrectly()
+    {
+        //do this after merge from Spencer
     }
 
     @Test
@@ -89,6 +107,7 @@ class MazeTests {
         assertEquals(correctRoom, true);
     }
 
+
     @Test
     public void getMazeLayout_Valid_ReturnsExpectedString(){
         Maze maze = new Maze();
@@ -104,6 +123,18 @@ class MazeTests {
                         "***********\n";
         assertEquals(expected, maze.getMazeLayout());
     }
+
+    private Room getLastRoom(Maze maze)
+    {
+        while(!maze.getCurrentRoom().getEastBarrier().isAWall())
+            maze.movePlayerOneSpace("east");
+
+        while(!maze.getCurrentRoom().getSouthBarrier().isAWall())
+            maze.movePlayerOneSpace("south");
+
+        return maze.getCurrentRoom();
+    }
+
 
 
 }
