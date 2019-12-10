@@ -123,7 +123,7 @@ public class Maze  implements Serializable {
             else
             {
                 System.out.println("Locking " + direction + " Door");
-                lockDoor(door, direction);
+                lockCurrentRoomsDoor(direction);
                 canSolve();
             }
         }
@@ -158,8 +158,9 @@ public class Maze  implements Serializable {
         }
     }
 
-    private void lockDoor(Door door, String direction)
+    public void lockCurrentRoomsDoor(String direction)
     {
+        Door door = new Door();
         Door otherSide = new Door();
 
         switch(direction)
@@ -225,7 +226,7 @@ public class Maze  implements Serializable {
         currentRoom = rooms[playerRow][playerCol];
     }
 
-    private boolean canMoveThroughBarrier(IBarrier barrier)
+    public boolean canMoveThroughBarrier(IBarrier barrier)
     {
         boolean canMove = true;
 
