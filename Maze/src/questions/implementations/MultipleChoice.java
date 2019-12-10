@@ -8,9 +8,6 @@ public class MultipleChoice extends Question {
     private Choices answerChoices;
 
 
-    public MultipleChoice() {
-        super();
-    }
 
     public MultipleChoice(String question , String [] choices , String answer){
         super(question, answer);
