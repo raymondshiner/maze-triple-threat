@@ -22,6 +22,11 @@ public class Maze  implements Serializable {
         buildMaze (row, col);
     }
 
+    public Maze()
+    {
+        buildMaze(5, 5);
+    }
+
     private void buildMaze(int row, int col){
         rooms = new Room[row][col];
         playerRow = 0;
@@ -33,7 +38,7 @@ public class Maze  implements Serializable {
         {
             for(int y = 0; y<col; y++)
             {
-                Room room = new Room(); //Room by default is all doors
+                Room room = new Room(x, y); //Room by default is all doors
 
                 Door north = (Door)room.getNorthBarrier();
                 Door south = (Door)room.getSouthBarrier();
@@ -181,7 +186,7 @@ public class Maze  implements Serializable {
         door.lock();
     }
 
-    private void movePlayerOneSpace(String direction) {
+    public void movePlayerOneSpace(String direction) {
 
         System.out.println("You Walk through the " + direction + " door");
 

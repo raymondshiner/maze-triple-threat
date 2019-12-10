@@ -24,7 +24,7 @@ public class Game {
         Player thePlayer = new Player();
         thePlayer.setName(playerName);
 
-        theMaze = new Maze(5, 5);
+        theMaze = new Maze();
         theMaze.setPlayer(thePlayer);
 
         gameIsSaved = false;
