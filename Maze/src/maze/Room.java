@@ -54,7 +54,7 @@ public class Room implements Serializable {
         System.out.println(down);
     }
 
-    private String constructBarrierString(IBarrier barrier) {
+    public String constructBarrierString(IBarrier barrier) {
         if(barrier.isAWall())
             return "Wall";
 
