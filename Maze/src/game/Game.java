@@ -132,22 +132,9 @@ public class Game {
         return false;
 
     }
-    private void userWantsToSave(Scanner input){
-        do{
-            printSaves();
-            int userChoice = input.nextInt();
-        }while(true);
 
 
-    }
 
-    private void printSaves(){
-        System.out.println("Here are your saves to choose from ");
-        for(int i = 0 ; i < saves.length ; i++){
-            System.out.println(i +": " + saves[i]);
-        }
-        System.out.println("Please choose the number that you would like to save your game to");
-    }
 
     private boolean userWantsToQuit(Scanner input){
         boolean tryAgain;

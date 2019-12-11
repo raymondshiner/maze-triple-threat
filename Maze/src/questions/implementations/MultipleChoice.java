@@ -23,8 +23,7 @@ public class MultipleChoice extends Question {
 
     private class Choices implements Serializable{
         private String choiceA, choiceB, choiceC, choiceD;
-        // this will have to be random or the correct answer will always be A
-        // but do not currently care because it works and will work for deployment
+
         Choices(String a, String b, String c, String d){
             setChoice("a", a);
             setChoice("b", b);
