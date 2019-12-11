@@ -7,11 +7,18 @@ public abstract class Question implements Serializable {
     private String theAnswer;
     private final String cheat = "42";
     public Question(String input, String answer){
+        if(input == null || answer == null || input.isEmpty() || answer.isEmpty())
+        {
+            throw new IllegalArgumentException("Question constructor - neither question nor answer can be null or empty");
+        }
+
         this.theQuestion = input;
         this.theAnswer = answer;
     }
-    public Question(){this.theQuestion = "this is a default question";}
     public boolean checkAnswer(String toCheck){
+        if(toCheck == null)
+            return false;
+
         if (toCheck.equals(cheat) || toCheck.equalsIgnoreCase(theAnswer)) return true;
         return false;
     }

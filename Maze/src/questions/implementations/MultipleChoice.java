@@ -9,6 +9,10 @@ public class MultipleChoice extends Question {
 
     public MultipleChoice(String question , String [] choices , String answer){
         super(question, answer);
+        if(choices.length != 4 || choices[0] == null || choices[1] == null || choices[2] == null || choices[3] == null || choices[0].equals("") || choices[1].equals("") || choices[2].equals("") || choices[3].equals("") )
+        {
+            throw new IllegalArgumentException("Multiple Choice constructor - neither question nor correct answer or the answers can be null or empty");
+        }
         answerChoices = new Choices(choices[0], choices[1], choices[2], choices[3]);
     }
 
