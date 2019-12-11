@@ -29,10 +29,10 @@ public class Room implements Serializable {
         colLocation = col;
     }
 
-    public void setNorthBarrier(IBarrier barrier) { northBarrier = barrier; }
-    public void setSouthBarrier(IBarrier barrier) { southBarrier = barrier; }
-    public void setEastBarrier(IBarrier barrier) { eastBarrier = barrier; }
-    public void setWestBarrier(IBarrier barrier) { westBarrier = barrier; }
+    void setNorthBarrier(IBarrier barrier) { northBarrier = barrier; }
+    void setSouthBarrier(IBarrier barrier) { southBarrier = barrier; }
+    void setEastBarrier(IBarrier barrier) { eastBarrier = barrier; }
+    void setWestBarrier(IBarrier barrier) { westBarrier = barrier; }
 
     public IBarrier getNorthBarrier() { return northBarrier; }
     public IBarrier getSouthBarrier() { return southBarrier; }
@@ -42,7 +42,7 @@ public class Room implements Serializable {
     public int getColLocation() {return colLocation;}
 
 
-    public void displayRoom(){
+    void displayRoom(){
         String up = "North - " + constructBarrierString(northBarrier);
         String left = "West - " + constructBarrierString(westBarrier);
         String right = "East - " + constructBarrierString(eastBarrier);

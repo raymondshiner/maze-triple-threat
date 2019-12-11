@@ -125,7 +125,7 @@ public class Maze  implements Serializable {
         return  false;
     }
 
-    public boolean answersDoorQuestionCorrectly(Door door)
+    private boolean answersDoorQuestionCorrectly(Door door)
     {
         Question q = door.getQuestion();
         System.out.println();
@@ -271,10 +271,6 @@ public class Maze  implements Serializable {
         rooms[playerRow][playerCol].displayRoom();
     }
 
-    @Override
-    public String toString(){
-        return "this is a drawing of a fancy maze in ascii art \n ....... why dont you believe me?????";
-    }
 
     public String getMazeLayout(){
         String s = "P: Player\nE: Exit\n";
