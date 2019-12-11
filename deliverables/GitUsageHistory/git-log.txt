@@ -1,0 +1,166 @@
+
+C:\Users\raymo\git\maze-triple-threat>git log --all --decorate --oneline --graph
+*   61e72aa (HEAD -> master, origin/master, origin/HEAD) Merge pull request #13 from raymondshiner/fixAnswer
+|\
+| * 089c39e answer fixed, so is save
+|/
+* 65c1f29 Can Solve Functionality - Can Win/Lose Game (cheats only)
+* b964b39 Questions work with Cheats only
+* 84a0093 (origin/adminTool) renamed the SpencerIsAnIdiot to QuestionFactory because it works now
+* 156d0d9 updated which database we are taking the questions from
+* 5dda9ca fixed the database file so question factory will work
+*   e11e906 Merge pull request #11 from raymondshiner/canWinGame
+|\
+| * a133105 User can win the game
+* |   9cb6855 Merge pull request #12 from raymondshiner/questionFactory
+|\ \
+| |/
+|/|
+| *   887021d Merge branch 'master' into questionFactory
+| |\
+| * | 0951bb7 fixed merge conflicts
+| * | 5b069f8 SpencerIsAnIdiot works
+| * | 0d34c39 debugging
+| * | 411c594 question factory is done
+| * |   86123d7 fixing it i hope
+| |\ \
+| * | | 6b0af5b question factory works but need to know how the constructors work for the diferent types:...skipping...                *   61e72aa (HEAD -> master, origin/master, origin/HEAD) Merge pull request #13 from raymondshiner/fixAnswer
+|\
+| * 089c39e answer fixed, so is save
+|/
+* 65c1f29 Can Solve Functionality - Can Win/Lose Game (cheats only)
+* b964b39 Questions work with Cheats only
+* 84a0093 (origin/adminTool) renamed the SpencerIsAnIdiot to QuestionFactory because it works now
+* 156d0d9 updated which database we are taking the questions from
+* 5dda9ca fixed the database file so question factory will work
+*   e11e906 Merge pull request #11 from raymondshiner/canWinGame
+|\
+| * a133105 User can win the game
+* |   9cb6855 Merge pull request #12 from raymondshiner/questionFactory
+|\ \
+| |/
+|/|
+| *   887021d Merge branch 'master' into questionFactory
+| |\
+| * | 0951bb7 fixed merge conflicts
+| * | 5b069f8 SpencerIsAnIdiot works
+| * | 0d34c39 debugging
+| * | 411c594 question factory is done
+| * |   86123d7 fixing it i hope
+| |\ \
+| * | | 6b0af5b question factory works but need to know how the constructors work for the diferent types of questions and then can finish and commit to master
+* | | |   503be1a Merge pull request #10 from raymondshiner/makeMazeModular
+|\ \ \ \
+| * \ \ \   1247046 fix merge problems
+| |\ \ \ \
+| * | | | | c9f6ae5 maze is modular
+| | |_|_|/
+| |/| | |
+* | | | |   67d364b Merge pull request #8 from raymondshiner/popDB
+|\ \ \ \ \
+| |_|/ / /
+|/| | | |
+| * | | |   dd156ff Merge branch 'master' into popDB
+| |\ \ \ \
+| |/ / / /
+|/| | | |
+* | | | | d944520 working state
+* | | | | aff9d81 fix merge conflict problems
+| |/ / /
+|/| | |
+| * | | e43d157 added id fields to tables
+| * | |   4e1216c Merge branch 'master' into popDB
+| |\ \ \
+| |/ / /
+|/| | |
+* | | |   e0aecaa Merge pull request #7 from raymondshiner/popDB
+|\ \ \ \
+| |_|_|/
+|/| | |
+| | * | 39b0724 finished adding questions
+| | * | 6609bbd added more questions to excel files
+| |/ /
+| * | e246411 populated database
+|/ /
+* |   cd76eed Merge pull request #6 from raymondshiner/questionTypes
+|\ \
+| * | eabf977 rm /out
+| * |   2293b0b add gitignore
+| |\ \
+| |/ /
+|/| |
+* | |   07ba00d Merge pull request #5 from raymondshiner/saveGame
+|\ \ \
+| |_|/
+|/| |
+| * | a1943d7 added gameIsSaved = true so game dose not complain when quiting
+| * | 015f214 one instance of the game can be saved right now still need to make the code look prety and many have more than one save slot
+|/ /
+| * 6b0d394 fixed the questionType classes and removed the database handler class should be ready for the pull request
+| *   bcc4572 fixed merge conflicts
+| |\
+| |/
+|/|
+* |   3f736bc Merge pull request #4 from raymondshiner/moveThroughMaze
+|\ \
+| * | 81d09a0 Did Everything
+|/ /
+| * 119c0fb Added shortAnswer & trueFalse classes, decoupled db functionality from multipleChoice
+| * 418e7e6 added new question types and refactored db functionality into DatabaseHandler
+|/
+*   cd57b42 Merge pull request #3 from raymondshiner/displayRoom
+|\
+| *   8c49619 fix merge changes
+| |\
+| |/
+|/|
+* |   dae2adc Merge pull request #1 from raymondshiner/mazeMenus
+|\ \
+| * \   518a975 fix merge conflict
+| |\ \
+| |/ /
+|/| |
+| * | 41b7192 fixed code review stuff
+| * | 56ca920 the user can create and quit out of a game
+| | * 28a07aa added room display functionality, changed structure
+| |/
+|/|
+* |   745618e Merge pull request #2 from raymondshiner/displayMaze
+|\ \
+| * | af26b0d Update Maze/src/MazeTest.java
+| * | 1e375c7 added displayMaze and displayMaze test methods
+|/ /
+* | 6d3d900 3rd version UML upload
+* | b8e784d cleaned up empty file
+|/
+* 37b789c edited comments and added some more database stuff
+* 3c807cf database access should be cross platform now
+* 013ae1d added comments to code
+* c73c57e updated to show that the database is currently working
+* cb9fe63 added some database tests we still need to make it cross platfor / machine. currently it will only work on my machine and operation system because i set it up
+* af7095b stubbed out the classes in java
+* a600789 Updated coding standards for java again
+* 378cf93 added 2nd iteration UML
+*   79814da figured out 1==1 part 2
+|\
+| * 2ef5065 we figured out that 1 == 1
+* | 5c85adb -_-
+|/
+* 2551d4d switch to daylyn computer
+*   cbc07ff Merge remote-tracking branch 'origin/master'
+|\
+| * 332216b .classes added for some reason
+* | 30ecb7b made test directory
+|/
+* f957ec6 this is a test of codestream
+* 27ee6fa SRS version 1 upload
+* 4da107b added jpg of the simple uml
+* e165ada added the simple UML for the SRS
+* 850f10a added 1st iteration UML
+* 61d3e71 added the first iteration turn in stuff
+* f23693f init structure in java
+* 015d018 remove c# structure
+* 47434c3 updated the coding standards
+* e4a04b9 added the source for the UML so others can edit it
+* df51ce6 added the basic UML
+* 6a505e6 Init Commit - structure  in place
