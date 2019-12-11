@@ -21,16 +21,24 @@ public class Maze  implements Serializable {
         buildMaze (row, col);
     }
 
+    public Maze()
+    {
+        buildMaze(5, 5);
+    }
+
     private void buildMaze(int row, int col){
         rooms = new Room[row][col];
         playerRow = 0;
         playerCol = 0;
 
         QuestionFactory factory = new QuestionFactory();
+      
+        for(int x = 0; x < row; x++)
+        {
+            for(int y = 0; y<col; y++)
+            {
+                Room room = new Room(x, y); //Room by default is all doors
 
-        for(int x = 0; x < row; x++) {
-            for(int y = 0; y<col; y++) {
-                Room room = new Room(); //Room by default is all doors
 
                 Door north = (Door)room.getNorthBarrier();
                 Door south = (Door)room.getSouthBarrier();
@@ -108,7 +116,7 @@ public class Maze  implements Serializable {
 
             else {
                 System.out.println("Locking " + direction + " Door");
-                lockDoor(door, direction);
+                lockCurrentRoomsDoor(direction);
                 canSolve();
             }
         }
@@ -117,7 +125,7 @@ public class Maze  implements Serializable {
         return  false;
     }
 
-    private boolean answersDoorQuestionCorrectly(Door door)
+    public boolean answersDoorQuestionCorrectly(Door door)
     {
         Question q = door.getQuestion();
         System.out.println();
@@ -141,8 +149,9 @@ public class Maze  implements Serializable {
         }
     }
 
-    private void lockDoor(Door door, String direction)
+    public void lockCurrentRoomsDoor(String direction)
     {
+        Door door = new Door();
         Door otherSide = new Door();
 
         switch(direction){
@@ -168,7 +177,7 @@ public class Maze  implements Serializable {
         door.lock();
     }
 
-    private void movePlayerOneSpace(String direction) {
+    public void movePlayerOneSpace(String direction) {
 
         System.out.println("You walk through the " + direction + " door");
 
@@ -206,7 +215,8 @@ public class Maze  implements Serializable {
         currentRoom = rooms[playerRow][playerCol];
     }
 
-    private boolean canMoveThroughBarrier(IBarrier barrier){
+    public boolean canMoveThroughBarrier(IBarrier barrier)
+    {
         boolean canMove = true;
 
         if(barrier.isAWall()){

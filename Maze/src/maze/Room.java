@@ -11,14 +11,22 @@ public class Room implements Serializable {
     private IBarrier southBarrier;
     private IBarrier eastBarrier;
     private IBarrier westBarrier;
+    private int rowLocation;
+    private int colLocation;
     private boolean isTheExit;
 
-    public Room() {
+    public Room(int row, int col)
+    {
+        if(row < 0 || col < 0)
+            throw new IllegalArgumentException("Room() - row and/or col can't be 0 or less");
+
         northBarrier = new Door();
         southBarrier = new Door();
         eastBarrier = new Door();
         westBarrier = new Door();
         isTheExit = false;
+        rowLocation = row;
+        colLocation = col;
     }
 
     public void setNorthBarrier(IBarrier barrier) { northBarrier = barrier; }
@@ -30,6 +38,8 @@ public class Room implements Serializable {
     public IBarrier getSouthBarrier() { return southBarrier; }
     public IBarrier getEastBarrier() { return eastBarrier; }
     public IBarrier getWestBarrier() { return westBarrier; }
+    public int getRowLocation() {return rowLocation;}
+    public int getColLocation() {return colLocation;}
 
 
     public void displayRoom(){
