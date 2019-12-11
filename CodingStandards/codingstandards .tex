@@ -29,9 +29,9 @@ Because Tom told us to
 
 \section{Naming Conventions}
 \subsection{Interfaces}
-Interfaces will be named in camel case always beginning with a lower case I and then the intended use of the interface. For example, a CarComparator interface would be named “iCarComparator”
+Interfaces will be named in pascal case always beginning with an upper case I and then the intended use of the interface. For example, a CarComparator interface would be named “ICarComparator”
 \subsection{For Loop Variables}
-in the case of for loops, counting variables shall be denoted as i (and then j and k for any nested loops). In appropriate situations where more complicated logic or iteration occurs, author may utilize more meaningful variable names such as cur, row, etc.  \newline  Example \newline 
+in the case of for loops, counting variables shall be denoted as i (and then j and k for any nested loops) (x, y and z can also be substituted). In appropriate situations where more complicated logic or iteration occurs, author may utilize more meaningful variable names such as cur, row, etc.  \newline  Example \newline 
 (for(int i = 0; i $<$ someNumber; i++))
 
 \subsection{Variable Names} 
@@ -39,10 +39,8 @@ Variables should named with meaningful names. To make the code easier for others
 \subsection{Casing Styles}
 Camel Case will be use in almost all situations, as is according to recommended casing by the Java coding standards. (need to cite here ). (Method Signatures, varibles, etc.) \newline 
 \subsection{class conventions}
-Pascale case will be used for Class names
+Pascal case will be used for Class names
 \section{Commenting Conventions}
-\subsection{Files}
-At the top of each source file, a comment will list the name of the file, author, any revision authors, and a brief class description 
 \subsection{Methods}
 If a constructor, method, or field’s purpose would not be clear without an explanation, a brief comment should be included providing a description
 \newline
@@ -78,7 +76,8 @@ Whenever a semi colon is used to end a statement, it will go right after the las
 
 \section{Testing Conventions}
 \subsection{Classes}
-Each production project located at src/projectName/projectName.csproj will have a corresponding unit test project located at test/projectName.Tests/projectName.Tests.csproj. In this example the C$\#$ Solution that links all relevant projects in the application both testing and not is located on the same package level as the src and test directories. Inside of each projects corresponding unit test project will be the same number of C$\#$ classes as the production project, with each one being named identical followed by the word “tests” and example of such a structure is below \newline 
+Each source file in our production code will have a corresponding test file located in a package called tests which is located at the default package level. The name of each test file will have the name of the corresponding source file with the word Tests appended to the end. \\
+maze.java $->$ mazeTests.java
 \subsection{Methods}
 Unit Test Methods shall use the following system to be named, \enquote{TheMethodThatIsBeingTested\_TheConditionsOfTheTest\_ExpectedResultOfTest()}.The purpose of this naming convention is to provide users of the unit test with as much information as possible so that when they are running/testing their code, they know exactly what each test is accomplishing without having to look at the source code for the tests. Example – A unit test that tests CarCompator’s compare method may be named as such. (in the file CarComparatorTests) \enquote{Compare\_TwoIdenticalCars\_Returns0} The Unit test of course would do just this, pass two identical cars into the comparator compare Method and verify that they in fact return the expected result.
 \newline 
@@ -95,18 +94,20 @@ The Unit test of course would do just this, pass two identical cars into the com
 \subsection{Code}
 The actual code of the unit test should adhere to the coding standards we have set for all of our other source code, this rule is subject to change in the future.
 \section{Git Conventions }
-The Main project will have its own dedicated repository and the current updated project will be located on the master branch. Whenever one or more persons decides to work on a given feature, they will create a branch from master and begin work on said feature, when said feature is done, they will update their current branch with any changes from master that may have occured, and then submit a pull request (PR) back into master. Any changes made to master must be approved by at least 2 out of the 3 team members, and will always be done using a PR.. In short, any changes to the master branch must be submitted via aPR, and one team member other than the PR submitter must approve said PR before the changes are added to master.
-
+The Main project will have its own dedicated repository and the current updated project will be located on the master branch. Whenever one or more persons decides to work on a given feature, they will create a branch from master and begin work on said feature, when said feature is done, they will update their current branch with any changes from master that may have occurred, and then submit a pull request (PR) back into master. Any changes made to master must be approved by at least 2 out of the 3 team members, and will always be done using a PR. In short, any changes to the master branch must be submitted via a PR, and one team member other than the PR submitter must approve said PR before the changes are added to master.
+\newpage
 \section{Code Style Conventions}
 \subsection{Conditional}
 Conditional statements and any loops will always follow the indentation rules as described above, even when code braces are not necessary. \newline 
 EXAMPLE 
 \newline 
+
 if(a $<$ 10) \newline
 \hspace*{1cm}a++; \newline \newline
 $\wedge \wedge $THIS IS WRONG \newline 
 \newline
 if(a $<$ 10 )\{ \newline
 \hspace*{1cm}a++; \newline 
-\}
+\}\\
+$\wedge \wedge $THIS IS CORRECT \newline 
 \end{document}

@@ -1,0 +1,743 @@
+commit eff7cf611689de998c3f0534c99b7dae9dc3d879
+Merge: 8e24059 eab4788
+Author: scc128 <scurley2@eagles.ewu.edu>
+Date:   Tue Dec 10 20:54:37 2019 -0800
+
+    Merge pull request #23 from raymondshiner/roomTests
+    
+    RoomTests complete
+
+commit 8e24059bb97d032759faf3ce807183ffa74b0ff3
+Merge: df037bd dcec6cc
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Tue Dec 10 20:54:26 2019 -0800
+
+    Merge pull request #22 from raymondshiner/wallTests
+    
+    Wall tests
+
+commit df037bda16da478074c878bf45a1d4b26d9b28db
+Merge: c5be26f 2bffa64
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Tue Dec 10 20:53:42 2019 -0800
+
+    Merge pull request #21 from raymondshiner/questionFactoryUnitTests
+    
+    added tests for the question factory
+
+commit eab4788114c9e2c35a8027aa16b5c8a75f59bb8f
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Tue Dec 10 20:52:42 2019 -0800
+
+    RoomTests complete
+
+commit dcec6cc0bd51154408803a4f7bc63111888fc1b0
+Author: Spencer <Curley>
+Date:   Tue Dec 10 20:47:32 2019 -0800
+
+    did the player tests on this branch by accident
+
+commit d54e31248e27c03502b6035391c5ae93313bdf15
+Author: Spencer <Curley>
+Date:   Tue Dec 10 20:25:55 2019 -0800
+
+    finished door and wall tests
+
+commit 2bffa64edb8556e8cd50edcb7917efa45725acde
+Author: Spencer <Curley>
+Date:   Tue Dec 10 19:59:36 2019 -0800
+
+    added tests for the question factory
+
+commit c5be26ff1227d79a143c990acdf0ce604820cdff
+Merge: dd59e7a 56a9036
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Tue Dec 10 19:20:33 2019 -0800
+
+    Merge pull request #20 from raymondshiner/luancher
+    
+    installer done (I fully beta tested on my computer)
+    
+    Install to Desktop, Start App, New Game, Win Game, Play Again, New Game, Save Game, Exit App, Restart App, Load Game, Lose Game in that order.
+
+commit dd59e7a8295f9f35a2791848e5ce707c8238f38c
+Merge: 285519f 20f7deb
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Tue Dec 10 19:11:51 2019 -0800
+
+    Merge pull request #19 from raymondshiner/spencerUnitTests
+    
+    Spencer unit tests
+
+commit 20f7deb82910a9e0d49a8fed3a365ada9fc1bac5
+Merge: 10ae13b 285519f
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Tue Dec 10 19:11:42 2019 -0800
+
+    Merge branch 'master' into spencerUnitTests
+
+commit 10ae13b4f7b1dd96292e39411b6fd5c9cf0328ae
+Author: Spencer <Curley>
+Date:   Tue Dec 10 18:28:20 2019 -0800
+
+    added the question class and all sub classes unit tests
+
+commit 285519fd43096b5bf12fa8b15278a13fc53316a6
+Merge: 63c1d63 7f636c4
+Author: scc128 <scurley2@eagles.ewu.edu>
+Date:   Tue Dec 10 17:46:02 2019 -0800
+
+    Merge pull request #18 from raymondshiner/mazeTests
+    
+    Maze tests merged
+
+commit 7f636c415cf5d89eea954e40d5e4fe9ecebc744f
+Merge: 8d57400 63c1d63
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Tue Dec 10 11:26:14 2019 -0800
+
+    Merge branch 'master' into mazeTests
+
+commit 8d57400ee985281ebf17c028ca691bf6ab9deaac
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Tue Dec 10 11:22:02 2019 -0800
+
+    mazeTests Finished
+
+commit 56a9036e4e7d006ca55b66f3a3372422ab06e8c4
+Author: scc128 <scurley2@eagles.ewu.edu>
+Date:   Tue Dec 10 10:47:46 2019 -0800
+
+    installer done
+
+commit ffd03cad05b1e42f526c731271eca477a66d65a8
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Mon Dec 9 23:48:40 2019 -0800
+
+    still working
+
+commit 1e25f70126a3fcfcaa192531d557f3492638087f
+Author: Spencer <Curley>
+Date:   Mon Dec 9 23:48:16 2019 -0800
+
+    done with question tests
+
+commit 63c1d634b1e2c5bf1a64a17df5cd3d6bd4c4951c
+Merge: 022fddb 927f89b
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Mon Dec 9 21:30:10 2019 -0800
+
+    Merge pull request #17 from raymondshiner/checkCodingStandards
+    
+    updated code to match standards
+
+commit 022fddb7624bf4aa0aece8a1d5e9b451ba84076a
+Merge: db9334a c83a5e2
+Author: Daylyn Hoxie <dhoxie@eagles.ewu.edu>
+Date:   Mon Dec 9 21:27:01 2019 -0800
+
+    Merge pull request #16 from raymondshiner/tweekDB
+    
+    added the close database functionality
+
+commit 3fecb637c8c0426f9493585e3524698ee48fff21
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Mon Dec 9 21:26:34 2019 -0800
+
+    maze tests in progress
+
+commit 927f89b9f966c6183f9acaaf90cef809d57863ca
+Author: dhoxie <dhoxie@eagles.ewu.edu>
+Date:   Mon Dec 9 21:22:06 2019 -0800
+
+    updated code to match standards
+
+commit c83a5e2f0872cd89ad5e4107fef1bafc8104db04
+Author: Spencer <Curley>
+Date:   Mon Dec 9 21:15:29 2019 -0800
+
+    protected aginst sql injection hopefully i am not an expert in sql injection but it works for my attempts to drop tables
+
+commit 2aba1f108c588f207706314c2140680774f131e0
+Author: Spencer <Curley>
+Date:   Mon Dec 9 20:00:33 2019 -0800
+
+    added the close database functionality so that they do not fconflict
+
+commit db9334af372dd6b6d8cd01e99c288a0b071d6378
+Merge: f27f6ca 5e49b69
+Author: Daylyn Hoxie <dhoxie@eagles.ewu.edu>
+Date:   Mon Dec 9 19:50:15 2019 -0800
+
+    Merge pull request #15 from raymondshiner/refactorStructure
+    
+    rebuild structure - refactor program.java
+
+commit 5e49b691359444ea1c389e77b0395ea092af9ce6
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Mon Dec 9 19:44:35 2019 -0800
+
+    remove old unit test from pre-playerless maze constructor
+
+commit b9a194889daba82311e45a83c970f9aa50c6b30d
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Mon Dec 9 19:39:58 2019 -0800
+
+    rebuild structure - refactor program.java
+
+commit f27f6ca8c81c68075cc3f871bb6329ecd394980b
+Merge: 61e72aa 37cb5d0
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Mon Dec 9 19:16:30 2019 -0800
+
+    Merge pull request #14 from raymondshiner/adminTool
+    
+    finished the databse admin tool
+
+commit 37cb5d08016cb5e973511dc202cc1987ab75b03c
+Merge: 399fe12 61e72aa
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Mon Dec 9 19:16:20 2019 -0800
+
+    Merge branch 'master' into adminTool
+
+commit 399fe12ab90348a9d486ec00b9be1861a0d7231e
+Author: Spencer <Curley>
+Date:   Sun Dec 8 15:30:38 2019 -0800
+
+    finished the databse admin tool
+
+commit 61e72aa2ee203ac55ec3eed8ed1493c33101a7ad
+Merge: 65c1f29 089c39e
+Author: Daylyn Hoxie <dhoxie@eagles.ewu.edu>
+Date:   Sun Dec 8 14:06:55 2019 -0800
+
+    Merge pull request #13 from raymondshiner/fixAnswer
+    
+    answer fixed, so is save
+
+commit 089c39e85964c337b16222737b7cdcc237a65bc5
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Sat Dec 7 15:36:32 2019 -0800
+
+    answer fixed, so is save
+
+commit 65c1f29cb792794ce2f1368799bd39771801beb4
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Sat Dec 7 14:49:02 2019 -0800
+
+    Can Solve Functionality - Can Win/Lose Game (cheats only)
+
+commit b964b39a6aaee5a98aa4e9f125d7328bc6f8e81d
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Sat Dec 7 13:58:30 2019 -0800
+
+    Questions work with Cheats only
+
+commit 84a009378d10f0a9131d76e6975a45ba16c5a559
+Author: Spencer <Curley>
+Date:   Sat Dec 7 12:59:17 2019 -0800
+
+    renamed the SpencerIsAnIdiot to QuestionFactory because it works now
+
+commit 156d0d94587df9af8c5ede8259f277c9dbdcf117
+Author: Spencer <Curley>
+Date:   Sat Dec 7 12:56:23 2019 -0800
+
+    updated which database we are taking the questions from
+
+commit 5dda9cab39dca19d2bff6d5703ef9edb4e8ad6af
+Author: Spencer <Curley>
+Date:   Sat Dec 7 12:43:22 2019 -0800
+
+    fixed the database file so question factory will work
+
+commit e11e9063265a7b7b6dd3bf3c2f0aca34e85beb31
+Merge: 9cb6855 a133105
+Author: Daylyn Hoxie <dhoxie@eagles.ewu.edu>
+Date:   Sat Dec 7 12:35:44 2019 -0800
+
+    Merge pull request #11 from raymondshiner/canWinGame
+    
+    User can win the game
+
+commit 9cb6855f8e592d6287567bade15d2183de1d2809
+Merge: 503be1a 887021d
+Author: scc128 <scurley2@eagles.ewu.edu>
+Date:   Sat Dec 7 12:07:21 2019 -0800
+
+    Merge pull request #12 from raymondshiner/questionFactory
+    
+    Question factory fixed the merge conflicts by removing the database files that were in the question factory branch because they are outdated
+
+commit 887021d46b20be3b7c6cb51a49ac6c149ea7fedc
+Merge: 0951bb7 e0aecaa
+Author: Spencer <Curley>
+Date:   Sat Dec 7 12:05:45 2019 -0800
+
+    Merge branch 'master' into questionFactory
+
+commit 0951bb7eb2463171484dda2e86eff8f18c01248f
+Author: Spencer <Curley>
+Date:   Sat Dec 7 12:05:34 2019 -0800
+
+    fixed merge conflicts
+
+commit 5b069f8f78586e0b8ac5cf8bd7eacdc23b097f94
+Author: Spencer <Curley>
+Date:   Fri Dec 6 16:47:30 2019 -0800
+
+    SpencerIsAnIdiot works
+
+commit a1331055d0c275e5128cecdb2d20ab3a644e9d80
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Fri Dec 6 16:26:30 2019 -0800
+
+    User can win the game
+
+commit 0d34c3962bb0d09780816cb44a05d9d53b8ff99b
+Author: Spencer <Curley>
+Date:   Fri Dec 6 15:38:47 2019 -0800
+
+    debugging
+
+commit 503be1acbf6902c390597fad2b09a0247240f9f6
+Merge: 67d364b 1247046
+Author: Daylyn Hoxie <dhoxie@eagles.ewu.edu>
+Date:   Fri Dec 6 15:36:47 2019 -0800
+
+    Merge pull request #10 from raymondshiner/makeMazeModular
+    
+    Make maze modular
+
+commit 67d364b9827958770508450246f95ac363b7fb55
+Merge: d944520 dd156ff
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Fri Dec 6 15:33:26 2019 -0800
+
+    Merge pull request #8 from raymondshiner/popDB
+    
+    Pop db
+
+commit dd156fff7b874dd06699c9bb2843389a32bf8651
+Merge: e43d157 d944520
+Author: dhoxie <dhoxie@eagles.ewu.edu>
+Date:   Fri Dec 6 15:29:03 2019 -0800
+
+    Merge branch 'master' into popDB
+
+commit e43d15753ab1db100e878fef9013a43348c78414
+Author: dhoxie <dhoxie@eagles.ewu.edu>
+Date:   Fri Dec 6 15:27:32 2019 -0800
+
+    added id fields to tables
+
+commit 1247046af6503af3cc4da7eb7545f9a0b36def37
+Merge: c9f6ae5 d944520
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Fri Dec 6 15:25:13 2019 -0800
+
+    fix merge problems
+
+commit d944520cfdfb7d629d7d1fd5094d39ca227efa80
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Fri Dec 6 15:22:49 2019 -0800
+
+    working state
+
+commit aff9d810fb07bedcfc0b86394107678c03139d8b
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Fri Dec 6 15:17:06 2019 -0800
+
+    fix merge conflict problems
+
+commit c9f6ae5797304e717c772fe376989aaf56ca66e6
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Fri Dec 6 15:10:05 2019 -0800
+
+    maze is modular
+
+commit 411c59454b929a8e83834e0f2b628f6e4c9d841b
+Author: Spencer <Curley>
+Date:   Fri Dec 6 15:06:14 2019 -0800
+
+    question factory is done
+
+commit 4e1216cee5d1f9cfc3e76adad515e6e365bc5191
+Merge: 39b0724 e0aecaa
+Author: dhoxie <dhoxie@eagles.ewu.edu>
+Date:   Fri Dec 6 14:49:44 2019 -0800
+
+    Merge branch 'master' into popDB
+
+commit 39b07245c2a6584864b40884bb744588753af3b8
+Author: dhoxie <dhoxie@eagles.ewu.edu>
+Date:   Fri Dec 6 14:46:20 2019 -0800
+
+    finished adding questions
+
+commit 6609bbdb098f166a89a0769d5085798a2e88eb59
+Author: dhoxie <dhoxie@eagles.ewu.edu>
+Date:   Thu Dec 5 11:22:13 2019 -0800
+
+    added more questions to excel files
+
+commit e0aecaac65da905a95fff049ea1fac73d3669c7f
+Merge: cd76eed e246411
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Wed Dec 4 09:53:10 2019 -0800
+
+    Merge pull request #7 from raymondshiner/popDB
+    
+    populated database
+
+commit e246411356668a130260a6f6979e2532d637d55b
+Author: dhoxie <dhoxie@eagles.ewu.edu>
+Date:   Wed Dec 4 09:34:17 2019 -0800
+
+    populated database
+
+commit 86123d7f2c6ab02ccf89ee6554d9d204456cce4b
+Merge: 6b0af5b cd76eed
+Author: Spencer <Curley>
+Date:   Wed Dec 4 08:43:16 2019 -0800
+
+    fixing it i hope
+
+commit cd76eed44a35627761653f1e685c71a83f374a09
+Merge: 07ba00d eabf977
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Wed Dec 4 08:27:30 2019 -0800
+
+    Merge pull request #6 from raymondshiner/questionTypes
+    
+    Question types
+
+commit eabf9772de5c4e07139037052294f89ec9b83746
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Wed Dec 4 08:27:06 2019 -0800
+
+    rm /out
+
+commit 2293b0b67a11a345ec180b98e4675d7fced9bd98
+Merge: 6b0d394 07ba00d
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Wed Dec 4 08:26:16 2019 -0800
+
+    add gitignore
+
+commit 6b0d39452da4973f76c9d61c454c4505304de729
+Author: Spencer <Curley>
+Date:   Tue Dec 3 10:32:49 2019 -0800
+
+    fixed the questionType classes and removed the database handler class should be ready for the pull request
+
+commit 07ba00dd5a9cc0e942fea7fa44f5e3fd60209e59
+Merge: 3f736bc a1943d7
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Tue Dec 3 08:38:09 2019 -0800
+
+    Merge pull request #5 from raymondshiner/saveGame
+    
+    Save game
+
+commit bcc4572b983ff7f64370367af63d117a9bc59df2
+Merge: 119c0fb 3f736bc
+Author: dhoxie <dhoxie@eagles.ewu.edu>
+Date:   Mon Dec 2 19:21:12 2019 -0800
+
+    fixed merge conflicts
+
+commit 6b0af5b95fbff543769e3ed287876393d767a69b
+Author: Spencer <Curley>
+Date:   Sat Nov 30 17:40:12 2019 -0800
+
+    question factory works but need to know how the constructors work for the diferent types of questions and then can finish and commit to master
+
+commit a1943d784a97ef20faa3159d640fc57be4c3de88
+Author: Spencer <Curley>
+Date:   Sat Nov 30 08:11:22 2019 -0800
+
+    added gameIsSaved = true so game dose not complain when quiting
+
+commit 015f2146d7a67033b1a67b59c32a227678c1f85d
+Author: Spencer <Curley>
+Date:   Fri Nov 29 18:09:26 2019 -0800
+
+    one instance of the game can be saved right now still need to make the code look prety and many have more than one save slot
+
+commit 3f736bc042ba95317e4178bf2ef7b1478c4a7681
+Merge: cd57b42 81d09a0
+Author: scc128 <scurley2@eagles.ewu.edu>
+Date:   Fri Nov 29 14:00:02 2019 -0800
+
+    Merge pull request #4 from raymondshiner/moveThroughMaze
+    
+    Did Everything
+
+commit 119c0fb9466a79cd667515528bed9b984c4adc75
+Author: dhoxie <dhoxie@eagles.ewu.edu>
+Date:   Fri Nov 29 10:22:07 2019 -0800
+
+    Added shortAnswer & trueFalse classes, decoupled db functionality from multipleChoice
+
+commit 81d09a0c2ff02f249664755b4db786a85c2d46db
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Wed Nov 27 21:43:31 2019 -0800
+
+    Did Everything
+
+commit 418e7e6727514fbf4f382f919dd7834925dff4f8
+Author: dhoxie <dhoxie@eagles.ewu.edu>
+Date:   Tue Nov 26 19:47:44 2019 -0800
+
+    added new question types and refactored db functionality into DatabaseHandler
+
+commit cd57b426aa04cbe7465b80d61321bd8b1f81fd91
+Merge: dae2adc 8c49619
+Author: Daylyn Hoxie <dhoxie@eagles.ewu.edu>
+Date:   Thu Nov 21 08:49:32 2019 -0800
+
+    Merge pull request #3 from raymondshiner/displayRoom
+    
+    displayRoom Functionality
+
+commit 8c49619798e62f84eea2cb7c0915551d3045f855
+Merge: 28a07aa dae2adc
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Wed Nov 20 20:11:26 2019 -0800
+
+    fix merge changes
+
+commit dae2adc00987655d175494241a3854aa3d3fe2bf
+Merge: 745618e 518a975
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Wed Nov 20 18:36:28 2019 -0800
+
+    Merge pull request #1 from raymondshiner/mazeMenus
+    
+    the user can create and quit out of a game
+
+commit 518a97523bc2321c23fdc995c143c179d05b60e5
+Merge: 41b7192 745618e
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Wed Nov 20 18:33:22 2019 -0800
+
+    fix merge conflict
+
+commit 41b719288427dc908cdff7639ad35f4c059db25a
+Author: Spencer <Curley>
+Date:   Wed Nov 20 18:24:50 2019 -0800
+
+    fixed code review stuff
+
+commit 28a07aa61cb43c533c2a5b5b7a284b98ee1c67d6
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Wed Nov 20 18:01:15 2019 -0800
+
+    added room display functionality, changed structure
+
+commit 745618ef5a397cbbfb7091dc005d5da379bc0c53
+Merge: 6d3d900 af26b0d
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Wed Nov 20 14:41:44 2019 -0800
+
+    Merge pull request #2 from raymondshiner/displayMaze
+    
+    added displayMaze and displayMaze test methods
+
+commit af26b0d42c99a98c2cb03c6df24fd798b48081bb
+Author: Daylyn Hoxie <dhoxie@eagles.ewu.edu>
+Date:   Wed Nov 20 13:19:54 2019 -0800
+
+    Update Maze/src/MazeTest.java
+    
+    Co-Authored-By: Raymond Shiner <raymondshiner@gmail.com>
+
+commit 1e375c7ffe3719b17bd8f48ea4cac9d01fc82183
+Author: dhoxie <dhoxie@eagles.ewu.edu>
+Date:   Tue Nov 19 19:42:19 2019 -0800
+
+    added displayMaze and displayMaze test methods
+
+commit 6d3d900e69b539b88508e97f4899e2672dffd028
+Author: dhoxie <dhoxie@eagles.ewu.edu>
+Date:   Tue Nov 19 08:18:04 2019 -0800
+
+    3rd version UML upload
+
+commit b8e784d2bd2d9efad0ea94ad706b3af667d8e9c7
+Author: dhoxie <dhoxie@eagles.ewu.edu>
+Date:   Mon Nov 18 10:37:39 2019 -0800
+
+    cleaned up empty file
+
+commit 56ca92044a5cb1855bd0083ca9f069abdffbe01b
+Author: Spencer <Curley>
+Date:   Sun Nov 17 13:06:45 2019 -0800
+
+    the user can create and quit out of a game
+
+commit 37b789c901298f0994538156bf98ca6586ad131c
+Author: Spencer <Curley>
+Date:   Wed Nov 13 16:42:13 2019 -0800
+
+    edited comments and added some more database stuff
+
+commit 3c807cf256b55144f7598a7f8970fe1c9ad9a991
+Author: Spencer <Curley>
+Date:   Tue Nov 12 13:08:21 2019 -0800
+
+    database access should be cross platform now
+
+commit 013ae1d5c0be8d3dafbe19af11607790fb058246
+Author: Spencer <Curley>
+Date:   Mon Nov 11 18:16:55 2019 -0800
+
+    added comments to code
+
+commit c73c57eba3e985fdb2c7c767fe76807ceea0b039
+Author: Spencer <Curley>
+Date:   Mon Nov 11 17:53:09 2019 -0800
+
+    updated to show that the database is currently working
+
+commit cb9fe63867f7d3c63594404710a324c51c241caf
+Author: Spencer <Curley>
+Date:   Mon Nov 11 14:11:14 2019 -0800
+
+    added some database tests we still need to make it cross platfor / machine. currently it will only work on my machine and operation system because i set it up
+
+commit af7095b11ed683b85941faf4d2128c1501e8e805
+Author: Spencer <Curley>
+Date:   Mon Nov 11 13:02:09 2019 -0800
+
+    stubbed out the classes in java
+
+commit a600789a8db857ed40c36d026af5610ccd500ee0
+Author: Spencer <Curley>
+Date:   Mon Nov 11 12:42:17 2019 -0800
+
+    Updated coding standards for java again
+
+commit 378cf9339ceaba70b4d58cf6df7065c1063846c6
+Author: dhoxie <dhoxie@eagles.ewu.edu>
+Date:   Sun Nov 10 19:10:19 2019 -0800
+
+    added 2nd iteration UML
+
+commit 79814da7a8a1fddd2564b82a051eb5a9123f4218
+Merge: 5c85adb 2ef5065
+Author: dhoxie <dhoxie@eagles.ewu.edu>
+Date:   Fri Nov 8 09:36:12 2019 -0800
+
+    figured out 1==1 part 2
+
+commit 5c85adb91b48226b0d74a184519e0b7913b2b081
+Author: dhoxie <dhoxie@eagles.ewu.edu>
+Date:   Fri Nov 8 09:33:24 2019 -0800
+
+    -_-
+
+commit 2ef506500aa52c771fd0f7e784a51150c65756a8
+Author: Spencer <Curley>
+Date:   Fri Nov 8 09:31:54 2019 -0800
+
+    we figured out that 1 == 1
+
+commit 2551d4d7ad4c1efc3529d358c968f5c89ab29fe4
+Author: Spencer <Curley>
+Date:   Fri Nov 8 09:24:30 2019 -0800
+
+    switch to daylyn computer
+
+commit cbc07ff5a1ca1242dc2545c2018b1668f4178b13
+Merge: 30ecb7b 332216b
+Author: dhoxie <dhoxie@eagles.ewu.edu>
+Date:   Fri Nov 8 09:12:10 2019 -0800
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 30ecb7bda139e605d3a2c604b921f3f5cbf42832
+Author: dhoxie <dhoxie@eagles.ewu.edu>
+Date:   Fri Nov 8 09:11:51 2019 -0800
+
+    made test directory
+
+commit 332216b086bb564f1f682814677c14eb0d614f91
+Author: Spencer <Curley>
+Date:   Fri Nov 8 09:06:08 2019 -0800
+
+    .classes added for some reason
+
+commit f957ec673a0b4fc295591357adefe7dcb50ce757
+Author: Spencer <Curley>
+Date:   Fri Nov 8 09:02:12 2019 -0800
+
+    this is a test of codestream
+
+commit 27ee6fa7eb011f75a0fa4177fe03249c83e48ab4
+Author: dhoxie <dhoxie@eagles.ewu.edu>
+Date:   Wed Nov 6 10:31:58 2019 -0800
+
+    SRS version 1 upload
+
+commit 4da107bffdbdf2bd7e0a6e6ddfca988c1cd0d5e0
+Author: Spencer <Curley>
+Date:   Wed Nov 6 08:28:04 2019 -0800
+
+    added jpg of the simple uml
+
+commit e165ada2bdc93e1f45901b48097e724bb3c778c2
+Author: Spencer <Curley>
+Date:   Wed Nov 6 08:23:20 2019 -0800
+
+    added the simple UML for the SRS
+
+commit 850f10acea109114dd63d45c741c2df5ac7e9cfd
+Author: dhoxie <dhoxie@eagles.ewu.edu>
+Date:   Tue Nov 5 08:56:00 2019 -0800
+
+    added 1st iteration UML
+
+commit 61d3e712e434750f8d0c25d13825b9bea013d3d6
+Author: Spencer <Curley>
+Date:   Mon Nov 4 18:22:10 2019 -0800
+
+    added the first iteration turn in stuff
+
+commit f23693f10d543496a2702f8d39b677f89ee24468
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Mon Nov 4 18:13:16 2019 -0800
+
+    init structure in java
+
+commit 015d0183cf3fd607f4f9abf3b17e95857e398192
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Mon Nov 4 18:07:07 2019 -0800
+
+    remove c# structure
+
+commit 47434c339ae196a85ae3fad9b26bb01b0ab0cba0
+Author: Spencer <Curley>
+Date:   Mon Nov 4 07:16:03 2019 -0800
+
+    updated the coding standards
+
+commit e4a04b9633ce63508db3a08da2d59f407c20e1d4
+Author: Spencer <Curley>
+Date:   Fri Nov 1 08:18:27 2019 -0700
+
+    added the source for the UML so others can edit it
+
+commit df51ce6add0ed913178d90bdbcd3f0ec47c4993f
+Author: Spencer <Curley>
+Date:   Wed Oct 30 08:42:43 2019 -0700
+
+    added the basic UML
+
+commit 6a505e626126900c48696fdf5ae15d46b5f8e706
+Author: Raymond Shiner <raymondshiner@gmail.com>
+Date:   Sat Oct 19 13:07:40 2019 -0700
+
+    Init Commit - structure  in place
