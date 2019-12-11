@@ -37,7 +37,7 @@ public class QuestionTests {
     public void constructor_EmptyAnswer_ThrowsIllegalArgumentException()
     {
         assertThrows(IllegalArgumentException.class, () -> {
-            TestableQuestion t = new TestableQuestion(null, "Good");
+            TestableQuestion t = new TestableQuestion(null, "");
         });
     }
 
