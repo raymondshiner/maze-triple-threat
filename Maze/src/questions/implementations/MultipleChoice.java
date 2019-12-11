@@ -7,8 +7,6 @@ import java.io.Serializable;
 public class MultipleChoice extends Question {
     private Choices answerChoices;
 
-
-
     public MultipleChoice(String question , String [] choices , String answer){
         super(question, answer);
         if(choices.length != 4 || choices[0] == null || choices[1] == null || choices[2] == null || choices[3] == null || choices[0].equals("") || choices[1].equals("") || choices[2].equals("") || choices[3].equals("") )
@@ -18,11 +16,11 @@ public class MultipleChoice extends Question {
         answerChoices = new Choices(choices[0], choices[1], choices[2], choices[3]);
     }
 
-
     @Override
     public String toString(){
         return super.toString() + "\n" + answerChoices.toString();
     }
+
     private class Choices implements Serializable{
         private String choiceA, choiceB, choiceC, choiceD;
         // this will have to be random or the correct answer will always be A

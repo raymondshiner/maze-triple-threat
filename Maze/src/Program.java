@@ -34,8 +34,7 @@ public class Program {
 
             choice = input.nextLine();
 
-            switch(choice)
-            {
+            switch(choice) {
                 case "1": //new Game
 
                     theGame = new Game();
