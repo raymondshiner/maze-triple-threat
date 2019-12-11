@@ -16,10 +16,6 @@ public class Door implements IBarrier, Serializable {
 
     }
 
-    public boolean canOpen(){
-        return false;
-    }
-
     public void setQuestion(Question question) {
         if(question == null)
             throw new IllegalArgumentException("set Door Question is null");

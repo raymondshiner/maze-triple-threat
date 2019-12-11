@@ -2,7 +2,6 @@ package Tests;
 
 import org.junit.jupiter.api.Test;
 import questions.implementations.MultipleChoice;
-import questions.implementations.ShortAnswer;
 
 import static org.junit.jupiter.api.Assertions.*;
 

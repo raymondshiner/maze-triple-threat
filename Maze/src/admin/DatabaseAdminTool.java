@@ -82,17 +82,7 @@ public class DatabaseAdminTool {
         }
 
     }
-    // creates the sql statement to add the question to the database
-    // then calls addQuestionToDatabase that will execute the query
-    private void addMultipleChoice(){
 
-    }
-    private void addShortAnswer(){
-
-    }
-    private void addTrueFalse(){
-
-    }
     private boolean addQuestionToDatabase(String sql ){
         try{
             Statement test = theConnection.createStatement();
@@ -112,7 +102,7 @@ public class DatabaseAdminTool {
             initPath =  ".." +File.separator +  "database" + File.separator+"realdb.db";
 
             databasePath = new File(initPath);
-            // System.out.println(initPath + "\n" + databasePath.getCanonicalPath());
+
         }catch(Exception e ){
             System.out.println(e);
         }
